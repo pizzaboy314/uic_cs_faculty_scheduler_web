@@ -1,1 +1,5 @@
-stub
+Deliverables - Schedule
+- Working session login (shanon, by wed. night)
+- Static course listing page (bryan? thurs-fri night)
+- Static faculty listing page (bryan? fri-sat night)
+- Drag and drop calendar page (amber, fri-sat night)
