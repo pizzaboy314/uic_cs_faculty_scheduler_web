@@ -1,4 +1,4 @@
-Project Workbook: GitHub Wiki -->
+Project Workbook: GitHub Wiki (on the right)
 
 --------------------------------------------------------------------------
 
