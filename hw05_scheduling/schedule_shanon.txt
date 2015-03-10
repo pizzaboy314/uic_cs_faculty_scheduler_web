@@ -6,4 +6,3 @@ Deliverables - Schedule
 2. Change interfae based on user by Sat (3hr)
 	- Tools menu for norm user and admin
 	- No tools when not logged in
-
