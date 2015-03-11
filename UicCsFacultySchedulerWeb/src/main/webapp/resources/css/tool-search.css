@@ -1,0 +1,11 @@
+.leftwide {
+	color: #FFFFFF;
+	width: 50%;
+	float: left;
+}
+
+.rightshort {
+	color: #FFFFFF;
+	width: 30%;
+	float: right;
+}

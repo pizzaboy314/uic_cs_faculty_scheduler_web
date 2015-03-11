@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="true"%>
 <!DOCTYPE html>
 
 <!-- Template from: http://getbootstrap.com/examples/navbar-static-top/ -->
@@ -13,18 +15,19 @@
     <title>Scheduling Tool</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/navbar-fixed-top.css" rel="stylesheet">
-    <link href="css/tool-search.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/navbar-fixed-top.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/tool-search.css" rel="stylesheet">
     
-	<link href='fullcalendar/fullcalendar.css' rel='stylesheet' />
-	<link href='fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
-	<script src='fullcalendar/lib/moment.min.js'></script>
-	<script src='fullcalendar/lib/jquery.min.js'></script>
-	<script src='fullcalendar/fullcalendar.min.js'></script>
-	<script src="js/fullc.js"></script>
+	<link href='${pageContext.request.contextPath}/resources/fullcalendar/fullcalendar.css' rel='stylesheet' />
+	<link href='${pageContext.request.contextPath}/resources/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+	
+	<script src='${pageContext.request.contextPath}/resources/fullcalendar/lib/moment.min.js'></script>
+	<script src='${pageContext.request.contextPath}/resources/fullcalendar/lib/jquery.min.js'></script>
+	<script src='${pageContext.request.contextPath}/resources/fullcalendar/fullcalendar.min.js'></script>
+	<script src="${pageContext.request.contextPath}/resources/js/fullc.js"></script>
 
   </head>
 
@@ -100,7 +103,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.min.js"></script>
     
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!--script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script-->
