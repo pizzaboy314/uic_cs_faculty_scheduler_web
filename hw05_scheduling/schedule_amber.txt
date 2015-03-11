@@ -1,5 +1,5 @@
 Deliverables - Schedule
-1. Build faculty list page with empty fields. - Wednesday, 3/11 by 7pm (3hrs)
-2. Update tabs for .html home page. - Wednesday, 3/11 by 1pm (1hr)
-3. Add draggable events to scheduling page for courses - Thursday, 3/12 by 9pm (4hrs)
-
+- Working session login (shanon, by wed. night)
+- Static course listing page (bryan? thurs-fri night)
+- Static faculty listing page (bryan? fri-sat night)
+- Drag and drop calendar page (amber, fri-sat night)
