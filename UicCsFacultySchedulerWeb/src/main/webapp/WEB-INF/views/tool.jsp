@@ -16,19 +16,21 @@
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-
+    
     <!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/resources/css/navbar-fixed-top.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/css/tool-search.css" rel="stylesheet">
     
 	<link href='${pageContext.request.contextPath}/resources/fullcalendar/fullcalendar.css' rel='stylesheet' />
 	<link href='${pageContext.request.contextPath}/resources/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+	<link href="${pageContext.request.contextPath}/resources/css/fullc.css" rel="stylesheet">
 	
 	<script src='${pageContext.request.contextPath}/resources/fullcalendar/lib/moment.min.js'></script>
 	<script src='${pageContext.request.contextPath}/resources/fullcalendar/lib/jquery.min.js'></script>
+	<script src='${pageContext.request.contextPath}/resources/fullcalendar/lib/jquery-ui.custom.min.js'></script>
 	<script src='${pageContext.request.contextPath}/resources/fullcalendar/fullcalendar.min.js'></script>
 	<script src="${pageContext.request.contextPath}/resources/js/fullc.js"></script>
-
+	
   </head>
 
   <body>
@@ -70,35 +72,40 @@
         
       </div>
     </nav>
-
+    
     <div class="container">
-		
         <h1>Scheduling Tool</h1>
-        <p>
-			<table style="width:100%">
-				<tr>
-					<col width="50%">
-					<col width="30%">
-					<td>
-						<div id='calendar'></div>
-						<!-- embed src="fullcalendar/demos/agenda-views.html" -->
-						<!-- -->
-					</td>
-					<td>
-					<div class="box">
-					  <div class="container-1">
-					      <span class="icon"><i class="fa fa-search"></i></span>
-					      <input type="search" id="classsearch" placeholder="Search..." />
-					  </div>
-					</div>
-					</td>
-				</tr>
-			</table>
-		</p>
-      </div>
-
+        		<table style="width:100%; border:10px, solid black">
+					<tr>
+						<td >
+							<div class="box">
+								<div class="container-1">
+									<span class="icon"><i class="fa fa-search"></i></span>
+									<input type="search" id="classsearch" placeholder="Search..." />
+								<div>
+							</div>
+						</td>
+						<td>				
+							<div id='calendar'></div>
+							<!-- embed src="fullcalendar/demos/external-dragging.html" -->
+							<!-- -->	
+						</td>
+						<td>
+							<div id='external-events'">
+								<h4>Courses</h4>
+									<div class='fc-event'>CS 111</div>
+									<div class='fc-event'>CS 141</div>
+									<div class='fc-event'>CS 151</div>
+									<div class='fc-event'>CS 211</div>
+									<div class='fc-event'>CS 301</div>
+								<p>
+									<input type='checkbox' id='drop-remove' />
+									<label for='drop-remove'>remove after drop</label>
+								</p>
+							</div>
+					</tr>
+				</table>
     </div> <!-- /container -->
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
