@@ -14,7 +14,7 @@ public class SchedulingToolController {
 	private static final Logger logger = LoggerFactory.getLogger(SchedulingToolController.class);
 	
 	@RequestMapping(value = "/tool", method = RequestMethod.GET)
-	public String aasdasd(Locale locale, Model model) {
+	public String schedPage(Locale locale, Model model) {
 		return "tool";
 	}
 }

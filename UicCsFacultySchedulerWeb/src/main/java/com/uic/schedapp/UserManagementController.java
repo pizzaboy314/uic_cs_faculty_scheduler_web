@@ -14,7 +14,7 @@ public class UserManagementController {
 	private static final Logger logger = LoggerFactory.getLogger(UserManagementController.class);
 	
 	@RequestMapping(value = "/um", method = RequestMethod.GET)
-	public String aasdasd(Locale locale, Model model) {
+	public String umPage(Locale locale, Model model) {
 		return "usermanagement";
 	}
 }

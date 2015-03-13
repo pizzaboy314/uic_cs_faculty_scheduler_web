@@ -14,7 +14,7 @@ public class ContactController {
 	private static final Logger logger = LoggerFactory.getLogger(ContactController.class);
 	
 	@RequestMapping(value = "/contact", method = RequestMethod.GET)
-	public String aasdasd(Locale locale, Model model) {
+	public String contactPage(Locale locale, Model model) {
 		logger.info("Welcome to the about page! The client locale is {}.", locale);
 		return "contact";
 	}

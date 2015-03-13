@@ -17,7 +17,7 @@ public class AboutController {
 	private static final Logger logger = LoggerFactory.getLogger(AboutController.class);
 	
 	@RequestMapping(value = "/about", method = RequestMethod.GET)
-	public String aasdasd(Locale locale, Model model) {
+	public String aboutPage(Locale locale, Model model) {
 		logger.info("Welcome to the about page! The client locale is {}.", locale);
 		resourceFileLoadingTesting();
 		return "about";
