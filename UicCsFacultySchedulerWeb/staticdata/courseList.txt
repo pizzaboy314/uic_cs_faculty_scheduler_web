@@ -1,0 +1,315 @@
+CS 99: n/a
+hours: 0
+
+CS 100: Discovering Computer Science
+hours: 3
+
+CS 107: Introduction to Computing and Programming
+hours: 4
+
+CS 108: Fortran Programming for Engineers with MatLab
+hours: 3
+
+CS 109: C/C ++ Programming for Engineers with MatLab
+hours: 3
+
+CS 111: Program Design I
+hours: 3
+
+CS 141: Program Design II
+hours: 3
+
+CS 151: Mathematical Foundations of Computing
+hours: 3
+
+CS 201: Data Structures and Discrete Mathematics I
+hours: 4
+
+CS 202: Data Structures and Discrete Mathematics II
+hours: 3
+
+CS 211: Programming Practicum
+hours: 2
+
+CS 251: Data Structures
+hours: 4
+
+CS 261: Machine Organization
+hours: 3
+
+CS 266: Computer Architecture I: Logic and Computer Structures
+hours: 4
+
+CS 301: Languages and Automata
+hours: 3
+
+CS 335: Computer Ethics
+hours: 2
+
+CS 340: Software Design
+hours: 4
+
+CS 341: Programming Language Design and Implementation
+hours: 3
+
+CS 342: Software Design
+hours: 3
+
+CS 361: Computer Systems
+hours: 3
+
+CS 362: Computer Design
+hours: 3
+
+CS 366: Computer Architecture II: Hardware-Software Interface
+hours: 4
+
+CS 376: Practicum in Computer Science Presentations
+hours: 1
+
+CS 377: Communication and Ethical Issues in Computing
+hours: 3
+
+CS 385: Operating Systems Concepts and Design
+hours: 3
+
+CS 398: Undergraduate Design/Research
+hours: 3
+
+CS 401: Computer Algorithms I
+undergrad hours: 3
+grad hours: 4
+
+CS 411: Artificial Intelligence I
+undergrad hours: 3
+grad hours: 4
+
+CS 415: Computer Vision I
+undergrad hours: 3
+grad hours: 4
+
+CS 421: Natural Language Processing
+undergrad hours: 3
+grad hours: 4
+
+CS 422: User Interface Design and Programming
+undergrad hours: 3
+grad hours: 4
+
+CS 424: Visualization and Visual Analytics
+undergrad hours: 3
+grad hours: 4
+
+CS 426: Video Game Design and Development
+undergrad hours: 3
+grad hours: 4
+
+CS 440: Software Engineering I
+undergrad hours: 3
+grad hours: 4
+
+CS 441: Distributed Object Programming Using Middleware
+undergrad hours: 3
+grad hours: 4
+
+CS 442: Software Engineering II
+undergrad hours: 3
+grad hours: 4
+
+CS 450: Introduction to Networking
+undergrad hours: 3
+grad hours: 4
+
+CS 455: Design and Implementation of Network Protocols
+undergrad hours: 3
+grad hours: 4
+
+CS 466: Advanced Computer Architecture
+undergrad hours: 3
+grad hours: 4
+
+CS 469: Computer Systems Design
+undergrad hours: 3
+grad hours: 4
+
+CS 473: Compiler Design
+undergrad hours: 3
+grad hours: 4
+
+CS 474: Object-Oriented Languages and Environments
+undergrad hours: 3
+grad hours: 4
+
+CS 475: Object-Oriented Programming
+undergrad hours: 3
+grad hours: 4
+
+CS 476: Programming Language Design
+undergrad hours: 3
+grad hours: 4
+
+CS 477: Public Policy, Legal, and Ethical Issues in Computing, Privacy, and Security
+undergrad hours: 3
+grad hours: 4
+
+CS 478: Software Development for Mobile Platforms
+undergrad hours: 3
+grad hours: 4
+
+CS 480: Database Systems
+undergrad hours: 3
+grad hours: 4
+
+CS 485: Networked Operating Systems Programming
+undergrad hours: 4
+grad hours: 5
+
+CS 486: Secure Operating System Design and Implementation
+undergrad hours: 3
+grad hours: 4
+
+CS 487: Building Secure Computer Systems
+undergrad hours: 3
+grad hours: 4
+
+CS 488: Computer Graphics I
+hours: 0
+
+CS 491: Seminar
+hours: 1
+
+CS 493: Special Problems
+hours: 2
+
+CS 499: Professional Development Seminar
+hours: 0
+
+CS 501: Computer Algorithms II
+hours: 4
+
+CS 502: Design and Analysis of Efficient Algorithms in Computational Molecular Biology
+hours: 4
+
+CS 503: Applied Graph Theory
+hours: 4
+
+CS 505: Computability and Complexity Theory
+hours: 4
+
+CS 511: Artificial Intelligence II
+hours: 4
+
+CS 514: Expert Systems
+hours: 4
+
+CS 515: Advanced Computer Vision
+hours: 4
+
+CS 521: Statistical Natural Language Processing
+hours: 4
+
+CS 522: Human-Computer Interaction
+hours: 4
+
+CS 523: Multi-Media Systems
+hours: 4
+
+CS 524: Visualization and Visual Analytics II
+hours: 4
+
+CS 525: Advanced Graphics Processor Programming
+hours: 4
+
+CS 526: Computer Graphics II
+hours: 4
+
+CS 527: Computer Animation
+hours: 4
+
+CS 528: Virtual Reality
+hours: 4
+
+CS 540: Advanced Topics in Software Engineering
+hours: 4
+
+CS 541: Software Engineering Environments
+hours: 4
+
+CS 542: Distributed Software Engineering
+hours: 4
+
+CS 545: Formal Methods In Concurrent and Distributed Systems
+hours: 4
+
+CS 553: Distributed Computing Systems
+hours: 4
+
+CS 554: Advanced Topics in Concurrent Computing Systems
+hours: 4
+
+CS 559: Neural Networks
+hours: 4
+
+CS 560: Fuzzy Logic
+hours: 4
+
+CS 565: Physical Design Automation
+hours: 4
+
+CS 566: Parallel Processing
+hours: 4
+
+CS 567: Principles of Computational Transportation Science
+hours: 4
+
+CS 569: High-Performance Processors and Systems
+hours: 4
+
+CS 577: Object Stores
+hours: 4
+
+CS 580: Query Processing in Database Systems
+hours: 4
+
+CS 581: Database Management Systems
+hours: 4
+
+CS 582: Information Retrieval
+hours: 4
+
+CS 583: Data Mining and Text Mining
+hours: 4
+
+CS 584: Advanced Data Mining
+hours: 4
+
+CS 586: Data and Web Semantics
+hours: 4
+
+CS 587: Computer Systems Security
+hours: 4
+
+CS 588: Security and Privacy in Networked and Distributed Systems
+hours: 4
+
+CS 590: Research Methods in Computer Science
+hours: 4
+
+CS 594: Special Topics
+hours: 4
+
+CS 595: Departmental Seminar
+hours: 0
+
+CS 596: Individual Study
+hours: 1
+
+CS 597: Project Research
+hours: 0
+
+CS 598: M.S. Thesis Research
+hours: 0
+
+CS 599: Ph.D. Thesis Research
+hours: 0
+

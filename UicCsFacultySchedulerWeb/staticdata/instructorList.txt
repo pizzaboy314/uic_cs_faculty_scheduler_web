@@ -1,0 +1,608 @@
+name		John Bell
+title		Lecturer
+email		jbell@uic.edu
+degName		Ph.D., University of Wisconsin-Madison
+degYear		1990
+background	Virtual reality
+course1		361
+course2		377
+course3		440
+course4		100
+course5		442
+course6		450
+course7		107
+course8		109
+
+
+name		Tanya Berger-Wolf
+title		Associate Professor
+email		tanyabw@cs.uic.edu
+degName		Ph.D., University of Illinois at Urbana-Champaign
+degYear		2002
+background	Application of discrete modelling and analysis techniques to various areas of computational biology
+course1		151
+course2		201
+course3		301
+course4		401
+course5		594
+course6		99
+course7		99
+course8		99
+
+
+name		Daniel J. Bernstein
+title		Research Professor
+email		djb@math.uic.edu
+degName		Ph.D., University of California, Berkeley
+degYear		1995
+background	Computational number theory, computational commutative algebra, cryptography, computer security
+course1		99
+course2		99
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Ugo Buy
+title		Associate Professor
+email		buy@cs.uic.edu
+degName		Ph.D., University of Massachusetts
+degYear		1990
+background	Software engineering, digital government
+course1		342
+course2		474
+course3		478
+course4		582
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Isabel Cruz
+title		Professor
+email		ifc@cs.uic.edu
+degName		Ph.D., University of Toronto,
+degYear		1994
+background	Databases, geographic information systems, semantic web, information visualization, visual languages, graph drawing, multimedia, information retrieval, security
+course1		151
+course2		201
+course3		301
+course4		586
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Bhaskar  DasGupta
+title		Associate Professor
+email		dasgupta@cs.uic.edu
+degName		Ph.D., University of Minnesota, Minneapolis
+degYear		1995
+background	Bioinformatics, computational biology, neural networks, machine learning, optical networks, combinatorial algorithms
+course1		151
+course2		201
+course3		301
+course4		501
+course5		502
+course6		99
+course7		99
+course8		99
+
+
+name		Tom  DeFanti
+title		Distinguished Professor Emeritus
+email		tom@uic.edu
+degName		Ph.D., Ohio State University
+degYear		1973
+background	Virtual reality, computer networks, computer graphics
+course1		99
+course2		99
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Jakob Eriksson
+title		Assistant Professor
+email		jakob@uic.edu
+degName		Ph.D., University of California, Riverside
+degYear		2006
+background	participatory sensing, wireless and sensor networks, computational transportation science, operating system and language support for concurrent programs
+course1		361
+course2		385
+course3		450
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Barbara Di Eugenio
+title		Professor, Acting Director of Graduate Studies
+email		bdieugen@cs.uic.edu
+degName		Ph.D., University of Pennsylvania
+degYear		1993
+background	Natural language processing, intelligent agents, collaborative and tutoring systems
+course1		421
+course2		521
+course3		590
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Angus Forbes
+title		Assistant Professor
+email		aforbes@uic.edu
+degName		Ph.D., University of California, Santa Barbara
+degYear		2014
+background	Information visualization, human-computer interaction, computer graphics, computational aesthetics, creative coding
+course1		488
+course2		524
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Piotr Gmytrasiewicz
+title		Associate Professor
+email		piotr@cs.uic.edu
+degName		Ph.D., University of Michigan, Ann Arbor
+degYear		1992
+background	Artificial intelligence, multi-agent systems, intelligent agents, knowledge representation, uncertainty reasoning, automated decision-making, decision and game theories, intelligent coordination and communication, cognitive modeling
+course1		151
+course2		201
+course3		301
+course4		377
+course5		411
+course6		511
+course7		514
+course8		99
+
+
+name		Mark Grechanik
+title		Assistant Professor
+email		drmark@cs.uic.edu
+degName		Ph.D., The University of Texas at Austin
+degYear		2006
+background	Software engineering; software testing, verification and validation; software reuse; software evolution, and maintenance; data privacy in software engineering
+course1		441
+course2		442
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Joe Hummel
+title		Research Associate Professor
+email		jhummel2@uic.edu
+degName		Ph.D., University of California, Irvine
+degYear		1998
+background	parallelism, high performance computing, compilers, programming languages
+course1		109
+course2		301
+course3		341
+course4		377
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Andrew Johnson
+title		Associate Professor, Director of Research/EVL
+email		ajohnson@uic.edu
+degName		Ph.D., Wayne State University
+degYear		1994
+background	Computer graphics, collaborative environments, visualization, virtual reality, learning environments, user interfaces, visual analytics
+course1		424
+course2		528
+course3		594
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Chris Kanich
+title		Assistant Professor
+email		ckanich@cs.uic.edu
+degName		Ph.D., University of California, San Diego
+degYear		2012
+background	Economics of cybercrime, Internet measurement, Human factors in security
+course1		361
+course2		450
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Robert Kenyon
+title		Professor
+email		kenyon@uic.edu
+degName		Ph.D., University of California, Berkeley
+degYear		1978
+background	Human-Computer interaction, computer graphics
+course1		99
+course2		99
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Ajay Kshemkalyani
+title		Professor
+email		ajayk@cs.uic.edu
+degName		Ph.D., Ohio State University
+degYear		1991
+background	Distributed computing, computer networks, sensor networks, mobile ad-hoc networks, concurrent systems
+course1		201
+course2		251
+course3		401
+course4		553
+course5		566
+course6		99
+course7		99
+course8		99
+
+
+name		Jason Leigh
+title		Professor
+email		spiff@uic.edu
+degName		Ph.D., University of Illinois at Chicago
+degYear		1998
+background	Amplified collaboration environments, advanced networking, realtime computer Graphics, virtual Reality, video game design and development
+course1		99
+course2		99
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		John Lillis
+title		Associate Professor, Director of Undergraduate Studies
+email		jlillis@cs.uic.edu
+degName		Ph.D., University of California, San Diego
+degYear		1996
+background	CAD for VLSI, combinatorial optimization
+course1		141
+course2		201
+course3		251
+course4		401
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Bing Liu
+title		Professor
+email		liub@cs.uic.edu
+degName		Ph.D., University of Edinburgh
+degYear		1989
+background	Data mining and knowledge discovery, Web and text mining, Bioinformatics
+course1		201
+course2		583
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Leilah Lyons
+title		Assistant Professor
+email		llyons@uic.edu
+degName		Ph.D., University of Michigan, Ann Arbor
+degYear		2008
+background	Human-Computer Interaction (HCI), Computer-Supported Collaborative Learning (CSCL), Interactive Museum Exhibit Design
+course1		422
+course2		99
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Tom Moher
+title		Associate Professor Emeritus
+email		moher@uic.edu
+degName		Ph.D., University of Minnesota, Minneapolis
+degYear		1983
+background	Learning Environments, human-computer interaction
+course1		99
+course2		99
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Tadao Murata
+title		Distinguished Professor Emeritus
+email		murata@cs.uic.edu
+degName		Ph.D., University of Illinois at Urbana-Champaign
+degYear		1966
+background	Petri nets, design, modeling, and analysis of concurrent systems
+course1		99
+course2		99
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Peter Nelson
+title		Dean
+email		nelson@uic.edu
+degName		Ph.D., Northwestern University
+degYear		1988
+background	Artificial intelligence, intelligent transportation systems,manufacturing optimization, high-availability clustering, heuristic search
+course1		99
+course2		99
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Dale Reed
+title		Clinical Professor and Director of Undergraduate Recruitment
+email		reed@cs.uic.edu
+degName		Ph.D., Northwestern University
+degYear		1995
+background	Uses of technology in education, artificial intelligence
+course1		100
+course2		251
+course3		377
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Luc Renambot
+title		Associate Research Professor
+email		luc@evl.uic.edu
+degName		Ph.D., Universit? de Rennes,
+degYear		2000
+background	Tele-immersion, visualization, advanced networking
+course1		99
+course2		99
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Sol Shatz
+title		Professor Emeritus
+email		shatz@uic.edu
+degName		Ph.D., Northwestern University
+degYear		1983
+background	Software engineering, distributed computing
+course1		99
+course2		99
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Prasad Sistla
+title		Professor
+email		sistla@cs.uic.edu
+degName		Ph.D., Harvard University
+degYear		1983
+background	Formal methods in concurrent and distributed systems, semantics and verification of concurrent programs, database management systems
+course1		301
+course2		440
+course3		480
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Robert Sloan
+title		Professor and Department Head
+email		sloan@uic.edu
+degName		Ph.D., Massachusetts Institute of Technology
+degYear		1989
+background	Algorithms and complexity theory, especially applied to artificial intelligence problems, security, computer science education
+course1		301
+course2		377
+course3		477
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Jon Solworth
+title		Associate Professor
+email		solworth@cs.uic.edu
+degName		Ph.D., New York University
+degYear		1987
+background	Computer Systems Security, Networking, Operating Systems, and Distributed Systems
+course1		377
+course2		385
+course3		587
+course4		588
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Mitchell Theys
+title		Clinical Associate Professor
+email		mtheys@uic.edu
+degName		Ph.D., Purdue University
+degYear		1999
+background	Heterogeneous computing, GPGPU programming, Parallel Processing
+course1		201
+course2		261
+course3		362
+course4		466
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Patrick Troy
+title		Clinical Associate Professor
+email		troy@cs.uic.edu
+degName		M.S., Pennsylvania State University
+degYear		1990
+background	Computer science education
+course1		111
+course2		201
+course3		211
+course4		251
+course5		342
+course6		99
+course7		99
+course8		99
+
+
+name		V. N. Venkatakrishnan
+title		Associate Professor
+email		venkat@cs.uic.edu
+degName		Ph.D., Stony Brook University
+degYear		2004
+background	Computer security, network security
+course1		487
+course2		99
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Ouri Wolfson
+title		Richard and Loan Hill Professor
+email		wolfson@cs.uic.edu
+degName		Ph.D., New York University
+degYear		1984
+background	Database systems, distributed systems, transaction processing, mobile computing
+course1		480
+course2		581
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Clement Yu
+title		Professor Emeritus
+email		yu@cs.uic.edu
+degName		Ph.D., Cornell University
+degYear		1973
+background	Database management, information retrieval and knowledge base management, multimedia retrieval
+course1		580
+course2		99
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Philip S. Yu
+title		Distinguished Professor and Wexler Chair in Information Technology
+email		psyu@cs.uic.edu
+degName		Ph.D., Stanford University
+degYear		1978
+background	Data mining, database, social networks and web
+course1		99
+course2		99
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Brian Ziebart
+title		Assistant Professor
+email		bziebart@uic.edu
+degName		Ph.D., Carnegie Mellon University
+degYear		2010
+background	Statistical machine learning, robotics, artificial intelligence, assistive technologies
+course1		401
+course2		491
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
+name		Lenore Zuck
+title		Associate Professor
+email		lenore@cs.uic.edu
+degName		Ph.D., Weizmann Institute of Science
+degYear		1987
+background	Theorem proving, formal methods, translation validation, formal analysis of security protocols
+course1		99
+course2		99
+course3		99
+course4		99
+course5		99
+course6		99
+course7		99
+course8		99
+
+
