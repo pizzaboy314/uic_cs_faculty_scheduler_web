@@ -30,48 +30,13 @@
 	<script src='${pageContext.request.contextPath}/resources/fullcalendar/lib/jquery-ui.custom.min.js'></script>
 	<script src='${pageContext.request.contextPath}/resources/fullcalendar/fullcalendar.min.js'></script>
 	<script src="${pageContext.request.contextPath}/resources/js/fullc.js"></script>
-	
   </head>
 
   <body>
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Course Scheduling Tool</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tools<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="tool.html">Schedule Classes</a></li>
-                <li><a href="usermanagement.html">Add User</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-            <div>
-	        	<form class="navbar-form navbar-right">
-		            <button type="submit" class="btn btn-success">Logout</button>
-		        </form>
-          	</div>
-          	</li>
-          </ul>
-        </div><!--/.nav-collapse -->
-        
-      </div>
-    </nav>
+	<nav class="navbar navbar-default navbar-static-top">
+		<jsp:include page="navbar.jsp" />
+	</nav>
     
     <div class="container">
         <h1>Scheduling Tool</h1>
