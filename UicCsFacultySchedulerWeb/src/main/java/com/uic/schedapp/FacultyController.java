@@ -31,15 +31,14 @@ public class FacultyController {
 	public static List<Instructor> instructors;
 	
 	@RequestMapping(value = "/faculty", method = RequestMethod.GET)
-	public ModelAndView aboutPage(Locale locale, Model m) {				// what is locale and model?
+	public String facultyPage(Locale locale, Model model) {	
 		logger.info("Welcome to the faculty page! The client locale is {}.", locale);
 		
 		instructors = new ArrayList<Instructor>();
 		loadInstructors();
 		
-		ModelAndView model = new ModelAndView("faculty");
-		model.addObject("instructors", instructors);
-		return model;
+		model.addAttribute("instructors", instructors);
+		return "faculty";
 	}
 	
 	public static void loadInstructors() {

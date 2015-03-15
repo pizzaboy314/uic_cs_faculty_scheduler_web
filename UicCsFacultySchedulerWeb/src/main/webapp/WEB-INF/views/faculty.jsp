@@ -46,7 +46,16 @@
 		</div>
 		<div>
 			<c:forEach var="instructor" items="${instructors}">
-				<c:out value="${instructor.name}" /> </br>
+				<div style="font-weight: bold">
+					<c:out value="${instructor.name}" />
+					</br>
+				</div>
+				<c:out value="${instructor.email}" /> </br>
+				<div style="font-style: italic">
+					<c:out value="${instructor.background}" />
+					</br>
+					</br>
+				</div>
 			</c:forEach>
 		</div>
 
