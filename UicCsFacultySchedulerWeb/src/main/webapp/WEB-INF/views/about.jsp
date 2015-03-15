@@ -59,7 +59,7 @@
 		  $('.aboutMenuItem').addClass('active');
 		});
 	</script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.min.js"></script>
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<!--script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script-->
 </body>
