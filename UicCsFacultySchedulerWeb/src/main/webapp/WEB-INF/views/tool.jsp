@@ -77,19 +77,7 @@
         <h1>Scheduling Tool</h1>
         		<table style="width:100%; border:10px, solid black">
 					<tr>
-						<td >
-							<div class="box">
-								<div class="container-1">
-									<span class="icon"><i class="fa fa-search"></i></span>
-									<input type="search" id="classsearch" placeholder="Search..." />
-								<div>
-							</div>
-						</td>
-						<td>				
-							<div id='calendar'></div>
-							<!-- embed src="fullcalendar/demos/external-dragging.html" -->
-							<!-- -->	
-						</td>
+					<!-- The Drag/Drop Box -->
 						<td>
 							<div id='external-events'">
 								<h4>Courses</h4>
@@ -102,6 +90,22 @@
 									<input type='checkbox' id='drop-remove' />
 									<label for='drop-remove'>remove after drop</label>
 								</p>
+						</td>
+						<!-- The Drag/Drop Box -->
+						
+						<td>				
+							<div id='calendar'></div>
+							<!-- embed src="fullcalendar/demos/external-dragging.html" -->
+							<!-- -->	
+						</td>
+						<td >
+							<div class="box">
+								<div class="container-1">
+									<span class="icon"><i class="fa fa-search"></i></span>
+									<input type="search" id="classsearch" placeholder="Search..." />
+								<div>
+							</div>
+						</td>
 							</div>
 					</tr>
 				</table>
