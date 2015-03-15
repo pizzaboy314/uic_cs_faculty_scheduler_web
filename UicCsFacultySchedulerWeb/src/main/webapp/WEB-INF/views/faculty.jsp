@@ -44,6 +44,11 @@
 			<h2>Faculty</h2>
 			<p>faculty go here</p>
 		</div>
+		<div>
+			<c:forEach var="instructor" items="${instructors}">
+				<c:out value="${instructor.name}" /> </br>
+			</c:forEach>
+		</div>
 
 	</div>
 	<!-- /container -->
