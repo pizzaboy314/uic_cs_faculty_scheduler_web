@@ -45,7 +45,7 @@
 			<c:forEach var="instructor" items="${instructors}">
 				<h3>${instructor.name}</h3>
 				<a href="mailto:${instructor.email}">${instructor.email}</a>
-				<p><span style="font-weight: bold;">Interests:</span> ${instructor.background}</p>
+				<p><span style="font-weight: bold;">Background:</span> ${instructor.background}</p>
 				<br>
 			</c:forEach>
 		</div>
