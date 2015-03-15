@@ -19,22 +19,8 @@ public class AboutController {
 	@RequestMapping(value = "/about", method = RequestMethod.GET)
 	public String aboutPage(Locale locale, Model model) {
 		logger.info("Welcome to the about page! The client locale is {}.", locale);
-		resourceFileLoadingTesting();
 		return "about";
 	}
 	
-	public void resourceFileLoadingTesting(){
-		System.out.println("--------------------------------------------");
-		File folder = null;
-		try {
-			folder = new ClassPathResource("staticdata").getFile();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		File[] listOfFiles = folder.listFiles();
-		for(File f : listOfFiles){
-			System.out.println(f.getName());
-		}
-		System.out.println("--------------------------------------------");
-	}
+	
 }
