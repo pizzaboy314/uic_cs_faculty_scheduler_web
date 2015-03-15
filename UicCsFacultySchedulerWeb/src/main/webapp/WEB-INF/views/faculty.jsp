@@ -40,22 +40,13 @@
 	<div class="container">
 
 		<!-- Main component for a primary marketing message or call to action -->
-		<div class="jumbotron">
-			<h2>Faculty</h2>
-			<p>faculty go here</p>
-		</div>
+		<h1 class="page-header"><strong>Faculty</strong></h1>
 		<div>
 			<c:forEach var="instructor" items="${instructors}">
-				<div style="font-weight: bold">
-					<c:out value="${instructor.name}" />
-					</br>
-				</div>
-				<c:out value="${instructor.email}" /> </br>
-				<div style="font-style: italic">
-					<c:out value="${instructor.background}" />
-					</br>
-					</br>
-				</div>
+				<h3>${instructor.name}</h3>
+				<a href="mailto:${instructor.email}">${instructor.email}</a>
+				<p><span style="font-weight: bold;">Interests:</span> ${instructor.background}</p>
+				<br>
 			</c:forEach>
 		</div>
 
