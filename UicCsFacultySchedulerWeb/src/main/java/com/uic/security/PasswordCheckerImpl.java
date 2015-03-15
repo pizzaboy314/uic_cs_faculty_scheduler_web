@@ -1,9 +1,9 @@
 package com.uic.security;
 
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 
-@Controller("passwodChecker")
+@Component("passChecker")
 public class PasswordCheckerImpl implements PasswordChecker{
 	private String username, password;
 
@@ -12,6 +12,7 @@ public class PasswordCheckerImpl implements PasswordChecker{
 	}
 
 	public void setPassword(String password) {
+		System.out.println("set pass to \"" + password + "\"");
 		this.password = password;
 	}
 
@@ -20,6 +21,7 @@ public class PasswordCheckerImpl implements PasswordChecker{
 	}
 
 	public void setUsername(String username) {
+		System.out.println("set username to \"" + username + "\"");
 		this.username = username;
 	}
 

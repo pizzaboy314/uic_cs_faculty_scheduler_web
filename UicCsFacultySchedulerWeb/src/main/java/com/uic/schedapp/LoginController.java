@@ -28,7 +28,8 @@ public class LoginController {
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
 	@Autowired
-	private PasswordChecker checker;
+	@Qualifier("passChecker")
+	private PasswordCheckerImpl checker;
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(HttpServletRequest request, HttpServletResponse response){
@@ -40,7 +41,7 @@ public class LoginController {
 		Cookie test = new Cookie("LoggedIn", "test");
 		test.setMaxAge(600);
 		if (checker.isValid(user, pass)){
-			logger.debug("Recieved username: " + user + ", password: " + pass);
+			logger.debug("Accpeted username: " + user + ", password: " + pass);
 			response.addCookie(test);
 		}else{
 			logger.debug("Invaid: " + user + ", password: " + pass);
