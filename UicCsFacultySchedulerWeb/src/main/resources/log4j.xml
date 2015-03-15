@@ -12,7 +12,7 @@
 	
 	<!-- Application Loggers -->
 	<logger name="com.uic.schedapp">
-		<level value="info" />
+		<level value="debug" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->

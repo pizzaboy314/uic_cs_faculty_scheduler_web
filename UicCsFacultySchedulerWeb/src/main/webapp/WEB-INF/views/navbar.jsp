@@ -22,7 +22,7 @@
 				<div>
 					<c:choose>
 	      				<c:when test="${empty cookie['LoggedIn']}">
-							<form action="LoginServlet" method="post" class="navbar-form navbar-right">
+							<form action="${pageContext.request.contextPath}/login" method="post" class="navbar-form navbar-right">
 								<div class="form-group">
 									<input type="text" name="user" placeholder="Username" class="form-control">
 								</div>
@@ -34,7 +34,7 @@
 							</form>
 						</c:when>
 						<c:otherwise>
-							<form class="navbar-form navbar-right">
+							<form action="${pageContext.request.contextPath}/logout" method="post" class="navbar-form navbar-right">
 								<button type="submit" class="btn btn-success">Logout</button>
 							</form>
 						</c:otherwise>
