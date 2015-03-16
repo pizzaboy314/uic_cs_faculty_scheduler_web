@@ -1,0 +1,17 @@
+.jumbotron {
+  padding: 1px 1px !important;
+  margin-bottom: 5px !important;
+  color: inherit;
+  background-color: #eee;
+}
+.jumbotron h3 {
+  margin-top: 20px !important;
+  margin-left: 20px !important;
+}
+
+.jumbotron p {
+  margin-bottom: 0px !important;
+  margin-left: 20px !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+}
