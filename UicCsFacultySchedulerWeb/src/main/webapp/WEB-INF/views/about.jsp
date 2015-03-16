@@ -43,7 +43,8 @@
 		<div class="jumbotron">
 			<h2>About</h2>
 			<p>This is a project developed under CS 422 to help Professor
-				Troy create the course schedules per semester</p>
+				Troy create the course schedule every semester and choose
+				instructors for each class. </p>
 		</div>
 
 	</div>
