@@ -24,6 +24,10 @@
 <link
 	href="${pageContext.request.contextPath}/resources/css/navbar-fixed-top.css"
 	rel="stylesheet">
+	
+<link
+	href="${pageContext.request.contextPath}/resources/css/list-view.css"
+	rel="stylesheet">
 
 <script
 	src="${pageContext.request.contextPath}/resources/bootstrap/js/ie-emulation-modes-warning.js"></script>
@@ -40,9 +44,16 @@
 	<div class="container">
 
 		<!-- Main component for a primary marketing message or call to action -->
-		<div class="jumbotron">
-			<h2>Courses</h2>
-			<p>courses go here</p>
+		<h1 class="page-header"><strong>Courses</strong></h1>
+		<div>
+			<c:forEach var="course" items="${courses}">
+				<div class="jumbotron">
+					<h3>CS ${course.number}</h3>
+					<p>${course.name}</p>
+					<p>${course.underGradHours} hours</p>
+					</br>
+				</div>
+			</c:forEach>
 		</div>
 
 	</div>
