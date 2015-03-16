@@ -35,9 +35,10 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h2>Contact Information</h2>
+        <h2>Contact Us</h2>
         <div>
-	        <p>Please Contact Someone at <a href="some1@example.com">some1@example.com</a></p>
+	        <p>Send an email to <a href="some1@example.com">some1@example.com</a> and we'll
+	        get back to you as soon as we can.</p>
         </div>
       </div>
 
