@@ -24,6 +24,10 @@
 <link
 	href="${pageContext.request.contextPath}/resources/css/navbar-fixed-top.css"
 	rel="stylesheet">
+	
+<link
+	href="${pageContext.request.contextPath}/resources/css/list-view.css"
+	rel="stylesheet">
 
 <script
 	src="${pageContext.request.contextPath}/resources/bootstrap/js/ie-emulation-modes-warning.js"></script>
@@ -43,10 +47,12 @@
 		<h1 class="page-header"><strong>Faculty</strong></h1>
 		<div>
 			<c:forEach var="instructor" items="${instructors}">
-				<h3>${instructor.name}</h3>
-				<a href="mailto:${instructor.email}">${instructor.email}</a>
-				<p><span style="font-weight: bold;">Background:</span> ${instructor.background}</p>
-				<br>
+				<div class="jumbotron">
+					<h3>${instructor.name}</h3>
+					<p><a href="mailto:${instructor.email}">${instructor.email}</a></p>
+					<p><span style="font-weight: bold;">Background:</span> ${instructor.background}</p>
+					</br>
+				</div>
 			</c:forEach>
 		</div>
 
