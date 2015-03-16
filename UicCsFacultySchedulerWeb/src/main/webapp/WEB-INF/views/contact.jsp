@@ -18,7 +18,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/navbar-fixed-top.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/navbar-fixed-top.css" rel="stylesheet">
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/ie-emulation-modes-warning.js"></script>
 
