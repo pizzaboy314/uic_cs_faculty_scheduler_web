@@ -46,11 +46,18 @@
 						<td>
 							<div id='external-events'">
 								<h4>Courses</h4>
+									<div class='fc-event'>CS 100</div>
+									<div class='fc-event'>CS 107</div>
+									<div class='fc-event'>CS 109</div>
 									<div class='fc-event'>CS 111</div>
 									<div class='fc-event'>CS 141</div>
 									<div class='fc-event'>CS 151</div>
 									<div class='fc-event'>CS 211</div>
+									<div class='fc-event'>CS 251</div>
+									<div class='fc-event'>CS 261</div>
 									<div class='fc-event'>CS 301</div>
+									<div class='fc-event'>CS 341</div>
+									<div class='fc-event'>CS 342</div>
 								<p>
 									<input type='checkbox' id='drop-remove' />
 									<label for='drop-remove'>remove after drop</label>
