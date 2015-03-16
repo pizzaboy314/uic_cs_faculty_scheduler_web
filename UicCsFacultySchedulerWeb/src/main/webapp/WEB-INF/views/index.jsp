@@ -37,10 +37,20 @@
 	<div class="container">
 
 		<!-- Main component for a primary marketing message or call to action -->
-		<div class="jumbotron">
-			<h1>Scheduling Tool</h1>
-			<p>
-			A direct link to the <a href="tool">Scheduling Tool Page</a></p>
+		<div class="jumbotron"><div class="jumbotron">
+			<table style="width:100%; border:10px, solid black">
+				<tr>
+					<td>
+						<h2>Scheduling Tool</h2>
+						<p>Welcome to our application! The various facets of our application 
+						are represented in the tabs at the top.</p>
+					</td>
+					<td>
+						<img style="width:100%; height:100%;" src="http://bit.ly/1bbMvqY">
+					</td>
+				</tr>
+			</table>
+		</div>
 		</div>
 
 	</div>
