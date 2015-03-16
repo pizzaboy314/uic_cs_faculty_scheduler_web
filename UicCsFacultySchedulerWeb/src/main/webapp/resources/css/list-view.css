@@ -2,11 +2,12 @@
   padding: 1px 1px !important;
   margin-bottom: 5px !important;
   color: inherit;
-  background-color: #eee;
+  background-color: #E4F5F7;
 }
 .jumbotron h3 {
   margin-top: 20px !important;
   margin-left: 20px !important;
+  margin-bottom: 0px !important;
 }
 
 .jumbotron p {

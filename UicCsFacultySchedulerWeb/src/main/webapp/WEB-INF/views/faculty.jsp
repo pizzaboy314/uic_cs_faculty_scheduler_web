@@ -49,7 +49,7 @@
 			<c:forEach var="instructor" items="${instructors}">
 				<div class="jumbotron">
 					<h3>${instructor.name}</h3>
-					<p><a href="mailto:${instructor.email}">${instructor.email}</a></p>
+					<p><a style="font-weight: bold;" href="mailto:${instructor.email}">${instructor.email}</a></p>
 					<p><span style="font-weight: bold;">Background:</span> ${instructor.background}</p>
 					</br>
 				</div>
