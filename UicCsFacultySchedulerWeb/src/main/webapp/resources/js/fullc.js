@@ -5,6 +5,7 @@ $(document).ready(function() {
 	
 	/* initialize the external events
 	-----------------------------------------------------------------*/
+	
 
 	$('#external-events .fc-event').each(function() {
 
@@ -20,8 +21,10 @@ $(document).ready(function() {
 			revert: true,      // will cause the event to go back to its
 			revertDuration: 0  //  original position after the drag
 		});
-
+		
+	
 	});
+	
 	
 	$('#calendar').fullCalendar({
 		header: {
@@ -35,6 +38,20 @@ $(document).ready(function() {
 				// if so, remove the element from the "Draggable Events" list
 				$(this).remove();
 			}
+			if ($('.fc-event').dblclick( 
+					function(){
+						//$(this).remove();
+						alert("Removing  a course");
+						if (!confirm ("Are you sure?")){
+							$('#calendar').fullCalendar('refetchEvents');
+						}else{
+							$('#calendar').fullCalendar('removeEvents');
+						}
+					}
+					)){
+				
+				}
+			
 		},
 		defaultView: 'agendaWeek',
 		defaultDate: '2015-02-12',
@@ -42,7 +59,6 @@ $(document).ready(function() {
         maxTime: '20:00:00',
 		editable: true,
 		droppable: true, // this allows things to be dropped onto the calendar
-		
 		eventLimit: true, // allow "more" link when too many events
 		events: [
 			{
@@ -50,11 +66,14 @@ $(document).ready(function() {
 				start: '2015-02-12T10:30:00',
 				end: '2015-02-12T12:30:00'
 			}
+			
 		]
 		
 	});
 	
 
 	
+	
+			
 	
 });
