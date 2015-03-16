@@ -1,4 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<link
+	href="${pageContext.request.contextPath}/resources/css/logo.css"
+	rel="stylesheet">
 <div id="navbardiv" class="container">
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle collapsed"
@@ -11,11 +14,10 @@
 	<div id="navbar" class="navbar-collapse collapse">
 		<div>
 		<a class="navbar-brand" href="${pageContext.request.contextPath}">
-			<img  alt="test" style="max-width:100%; max-height:100%;" src="${pageContext.request.contextPath}/resources/img/UICsquare.svg">
+			<img  alt="UIC" style="max-width:100%; height:50px;" src="${pageContext.request.contextPath}/resources/img/UICsquare.svg">
 		</a>
 		</div>
 		<ul class="nav navbar-nav">
-			<li class="homeMenuItem"><a href="${pageContext.request.contextPath}">Home</a></li>
 			<li class="facultyMenuItem"><a href="${pageContext.request.contextPath}/faculty">Faculty</a></li>
 			<li class="coursesMenuItem"><a href="${pageContext.request.contextPath}/courses">Courses</a></li>
 			<li class="aboutMenuItem"><a href="${pageContext.request.contextPath}/about">About</a></li>
