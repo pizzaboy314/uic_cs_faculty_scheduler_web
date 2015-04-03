@@ -44,6 +44,7 @@
 						<h2>Scheduling Tool</h2>
 						<p>Welcome to our application! The various facets of our application 
 						are represented in the tabs at the top.</p>
+						<p>${someString}</p>
 					</td>
 					<td>
 						<img style="width:100%; height:100%;" src="http://bit.ly/1bbMvqY">

@@ -5,3 +5,4 @@ target/
 .project
 .springBeans
 .DS_Store
+UicCsFacultySchedulerWeb/src/main/resources/application.properties
