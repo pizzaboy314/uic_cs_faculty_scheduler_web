@@ -46,12 +46,14 @@ public class HomeController {
 		logger.info("Welcome home! The client locale is {}.", locale);
 
 		SqlSession sqlSession = sessFactory.openSession();
-		SgmTestMapper testMapper = sqlSession.getMapper(SgmTestMapper.class);
-		List<SgmTest> v = testMapper.selectByExample(null);
 		StringBuilder randomString = new StringBuilder("Data Retrieved:\n");
-		for (SgmTest e : v){
-			randomString.append(e.toString() + "\n");
-		}
+		
+		//FIXME This will depend on your configuration file the string "SgmTest" will change
+//		SgmTestMapper testMapper = sqlSession.getMapper(SgmTestMapper.class);
+//		List<SgmTest> v = testMapper.selectByExample(null);
+//		for (SgmTest e : v){
+//			randomString.append(e.toString() + "\n");
+//		}
 		randomString.append("\nEnd of retrieval");
 		
 		model.addAttribute("someString", randomString);
