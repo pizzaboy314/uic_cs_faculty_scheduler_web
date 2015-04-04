@@ -5,4 +5,5 @@ target/
 .project
 .springBeans
 .DS_Store
-src/main/resources/application.properties
+application.properties
+generated/
