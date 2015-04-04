@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link
-	href="${pageContext.request.contextPath}/resources/css/logo.css"
+	href="${pageContext.request.contextPath}/resources/css/header-footer.css"
 	rel="stylesheet">
 <div id="navbardiv" class="container">
 	<div class="navbar-header">
