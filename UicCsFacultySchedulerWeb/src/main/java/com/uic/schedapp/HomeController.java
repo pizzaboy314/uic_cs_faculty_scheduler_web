@@ -1,6 +1,10 @@
 package com.uic.schedapp;
 
+import generated.mybatis.dao.UIC_ClassMapper;
+import generated.mybatis.model.UIC_Class;
+
 import java.io.IOException;
+import java.util.List;
 import java.util.Locale;
 
 import org.apache.ibatis.session.SqlSession;
@@ -35,12 +39,14 @@ public class HomeController {
 		SqlSession sqlSession = sessFactory.openSession();
 		StringBuilder randomString = new StringBuilder("Data Retrieved:\n");
 		
-		//FIXME This will depend on your configuration file the string "SgmTest" will change
-//		SgmTestMapper testMapper = sqlSession.getMapper(SgmTestMapper.class);
-//		List<SgmTest> v = testMapper.selectByExample(null);
-//		for (SgmTest e : v){
-//			randomString.append(e.toString() + "\n");
-//		}
+		// EXAMPLE
+		UIC_ClassMapper cm = sqlSession.getMapper(UIC_ClassMapper.class);
+		List<UIC_Class> list = cm.selectByExample(null);
+		for(UIC_Class c : list){
+			randomString.append(c.getLONGNAME());
+		}
+		// EXAMPLE
+		
 		randomString.append("\nEnd of retrieval");
 		
 		model.addAttribute("someString", randomString);
