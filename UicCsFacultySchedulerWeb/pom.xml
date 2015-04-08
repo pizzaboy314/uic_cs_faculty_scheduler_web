@@ -16,6 +16,12 @@
 		<mybatis.generator.overwrite>true</mybatis.generator.overwrite>
 		<mysql.jconnector.version>5.1.34</mysql.jconnector.version>
 	</properties>
+	<pluginRepositories>
+	  <pluginRepository>
+	        <id>maven-merge-properties-plugin-repo</id>      
+	        <url>https://maven-merge-properties-plugin.googlecode.com/svn/repomaven/maven2/</url>
+	  </pluginRepository>
+	</pluginRepositories>
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
@@ -187,6 +193,29 @@
 					<mainClass>org.test.int1.Main</mainClass>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>merge-properties-maven-plugin</artifactId>
+				<version>1.0</version>
+				<executions>
+					<execution>
+						<phase>validate</phase> <!-- you can also invoke the merge directly -->
+						<goals>
+							<goal>merge</goal>
+						</goals>
+						<configuration>
+							<prefixByFileName>false</prefixByFileName>
+							<merges>
+								<merge>
+									<propertiesFolder>src/main/resources/properties</propertiesFolder>
+									<targetFile>src/main/resources/application.properties</targetFile>
+								</merge>
+							</merges>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 	        <plugin>
 				<groupId>org.mybatis.generator</groupId>
 				<artifactId>mybatis-generator-maven-plugin</artifactId>
@@ -231,6 +260,25 @@
 										</versionRange>
 										<goals>
 											<goal>generate</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											merge-properties-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.0,)
+										</versionRange>
+										<goals>
+											<goal>merge</goal>
 										</goals>
 									</pluginExecutionFilter>
 									<action>
