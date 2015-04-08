@@ -7,6 +7,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,75 +37,76 @@ public class CoursesController {
 	public String coursesPage(Locale locale, Model model) {
 		logger.info("Welcome to the faculty page! The client locale is {}.", locale);
 		
-		courses = new ArrayList<Course>();
-		loadCourses();
+		try {
+			downloadAndParseCourses();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}		
 		
 		model.addAttribute("courses", courses);
 		return "courses";
 	}
 	
-	public static void loadCourses() {
-		checkCourseTSV();
+	public void downloadAndParseCourses() throws IOException {
+		courses = new ArrayList<Course>();
 		
-		String line;
-		File dataPath = null;
-		InputStream fis;
-		BufferedReader br;
+		String url = "https://www.uic.edu/ucat/courses/CS.html";
+		URL source = null;
 		try {
-			dataPath = new ClassPathResource("staticdata").getFile();
-			fis = new FileInputStream(dataPath.getAbsolutePath() + File.separator + "courses.tsv");
-			br = new BufferedReader(new InputStreamReader(fis, Charset.forName("UTF-8")));
-			
-			while((line = br.readLine()) != null){
-				Course c = new Course();
-				String[] fields = line.split("\t");
-				
-				c.setName(fields[0]);
-				c.setNumber(Integer.parseInt(fields[1]));
-				c.setUnderGradHours(Integer.parseInt(fields[2]));
-				c.setGradHours(Integer.parseInt(fields[3]));
-				
-				if(c.getNumber() != 99){
-					courses.add(c);
-				}
-			}
-			Collections.sort(courses);
-			
-			br.close();
-			br = null;
-			fis = null;
-		} catch (Exception e) {
+			source = new URL(url);
+		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
 		
-	}
-	
-	public static boolean checkCourseTSV(){
-		File dataPath = null;
-		try {
-			dataPath = new ClassPathResource("staticdata").getFile();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-		File dataFile = new File(dataPath.getAbsolutePath() + File.separator + "courses.tsv");
+		URLConnection uc = source.openConnection();
+		uc.addRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)");
+		uc.connect();
 		
-		if (!dataPath.exists()) {
-			dataPath.mkdirs();
-			return false;
-		} else if (!dataFile.exists()) {
-			FileOutputStream oFile;
-			try {
-				dataFile.createNewFile();
-				oFile = new FileOutputStream(dataFile, false);
-				oFile.close();
-			} catch (IOException e) {
-				e.printStackTrace();
+		
+		BufferedReader in = new BufferedReader(new InputStreamReader(uc.getInputStream()));
+		System.out.println("Parsing course data from web page...");
+		
+		Course c = new Course();
+		String inputLine = in.readLine();
+		while (inputLine != null) {
+			c = new Course();
+			
+			if (inputLine.contains("<p><b>")) {
+				String tmp = inputLine.substring(inputLine.indexOf("<b>"), inputLine.indexOf("</b>"));
+				int number = Integer.parseInt(tmp.replaceAll("<b>", ""));
+				
+				inputLine = in.readLine();
+				String name = inputLine.substring(inputLine.indexOf("<b>"), inputLine.indexOf("</b><br>")).replaceAll("<b>", "");
+				
+				tmp = inputLine.substring(inputLine.indexOf("<br><b>"), inputLine.indexOf(".</b>")).replaceAll("<br><b>", "");
+				int underGradHours, gradHours = 0;
+				if(tmp.contains("OR")){
+					underGradHours = Integer.parseInt(tmp.trim().charAt(0) + "");
+					tmp = tmp.replaceAll("\\d OR ", "");
+					gradHours = Integer.parseInt(tmp.trim().charAt(0) + "");
+				} else {
+					underGradHours = Integer.parseInt(tmp.trim().charAt(0) + "");
+				}
+				
+				c.setNumber(number);
+				c.setName(name);
+				c.setUnderGradHours(underGradHours);
+				c.setGradHours(gradHours);
+				
+				courses.add(c);
 			}
-			return false;
-		} else {
-			return true;
+			
+			if (inputLine.contains("Information provided by the Office of Programs and Academic Assessment.")) {
+				inputLine = null;
+			} else {
+				inputLine = in.readLine();
+			}
 		}
 		
+		in.close();
+		System.out.println("Finished parsing course data from web page...");
+		
+		Collections.sort(courses);
 	}
 	
 }
