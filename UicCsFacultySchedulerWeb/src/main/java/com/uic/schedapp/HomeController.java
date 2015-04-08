@@ -1,7 +1,7 @@
 package com.uic.schedapp;
 
-import generated.mybatis.dao.UIC_ClassMapper;
-import generated.mybatis.model.UIC_Class;
+import generated.mybatis.dao.CourseModelMapper;
+import generated.mybatis.model.CourseModel;
 
 import java.io.IOException;
 import java.util.List;
@@ -40,10 +40,10 @@ public class HomeController {
 		StringBuilder randomString = new StringBuilder("Data Retrieved:\n");
 		
 		// EXAMPLE
-		UIC_ClassMapper cm = sqlSession.getMapper(UIC_ClassMapper.class);
-		List<UIC_Class> list = cm.selectByExample(null);
-		for(UIC_Class c : list){
-			randomString.append(c.getLONGNAME());
+		CourseModelMapper cm = sqlSession.getMapper(CourseModelMapper.class);
+		List<CourseModel> list = cm.selectByExample(null);
+		for(CourseModel c : list){
+			randomString.append(c.getNAME());
 		}
 		// EXAMPLE
 		
