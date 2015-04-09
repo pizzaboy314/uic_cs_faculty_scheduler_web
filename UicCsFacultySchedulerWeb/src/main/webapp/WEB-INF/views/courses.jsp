@@ -48,9 +48,9 @@
 		<div>
 			<c:forEach var="course" items="${courses}">
 				<div class="jumbotron">
-					<h3>CS ${course.number}</h3>
-					<p>${course.name}</p>
-					<p>${course.underGradHours} hours</p>
+					<h3>CS ${course.NUMBER}</h3>
+					<p>${course.NAME}</p>
+					<p>${course.UNDERGRADHOURS} hours</p>
 					</br>
 				</div>
 			</c:forEach>

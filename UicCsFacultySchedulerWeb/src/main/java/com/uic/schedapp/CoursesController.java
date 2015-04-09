@@ -1,5 +1,8 @@
 package com.uic.schedapp;
 
+import generated.mybatis.dao.CourseModelMapper;
+import generated.mybatis.model.CourseModel;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,8 +19,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,14 +37,17 @@ import data.Instructor;
 public class CoursesController {
 	private static final Logger logger = LoggerFactory.getLogger(CoursesController.class);
 	
-	public static List<Course> courses;
+	public static List<CourseModel> courses;
+	
+	@Autowired
+	private SqlSessionFactory sessFactory;
 	
 	@RequestMapping(value = "/courses", method = RequestMethod.GET)
 	public String coursesPage(Locale locale, Model model) {
 		logger.info("Welcome to the faculty page! The client locale is {}.", locale);
 		
 		try {
-			downloadAndParseCourses();
+			downloadAndParseToDB();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}		
@@ -47,8 +56,10 @@ public class CoursesController {
 		return "courses";
 	}
 	
-	public void downloadAndParseCourses() throws IOException {
-		courses = new ArrayList<Course>();
+	public void downloadAndParseToDB() throws IOException {
+		courses = new ArrayList<CourseModel>();
+		SqlSession sqlSession = sessFactory.openSession();
+		CourseModelMapper cm = sqlSession.getMapper(CourseModelMapper.class);
 		
 		String url = "https://www.uic.edu/ucat/courses/CS.html";
 		URL source = null;
@@ -66,10 +77,10 @@ public class CoursesController {
 		BufferedReader in = new BufferedReader(new InputStreamReader(uc.getInputStream()));
 		System.out.println("Parsing course data from web page...");
 		
-		Course c = new Course();
+		CourseModel c = new CourseModel();
 		String inputLine = in.readLine();
 		while (inputLine != null) {
-			c = new Course();
+			c = new CourseModel();
 			
 			if (inputLine.contains("<p><b>")) {
 				String tmp = inputLine.substring(inputLine.indexOf("<b>"), inputLine.indexOf("</b>"));
@@ -88,12 +99,15 @@ public class CoursesController {
 					underGradHours = Integer.parseInt(tmp.trim().charAt(0) + "");
 				}
 				
-				c.setNumber(number);
-				c.setName(name);
-				c.setUnderGradHours(underGradHours);
-				c.setGradHours(gradHours);
+				c.setNUMBER((Integer)number);
+				c.setNAME(name);
+				c.setUNDERGRADHOURS((Integer)underGradHours);
+				c.setGRADHOURS((Integer)gradHours);
 				
 				courses.add(c);
+				if(cm.selectByPrimaryKey(c.getNUMBER()) == null){
+					cm.insert(c);
+				}
 			}
 			
 			if (inputLine.contains("Information provided by the Office of Programs and Academic Assessment.")) {
@@ -105,8 +119,6 @@ public class CoursesController {
 		
 		in.close();
 		System.out.println("Finished parsing course data from web page...");
-		
-		Collections.sort(courses);
 	}
 	
 }
