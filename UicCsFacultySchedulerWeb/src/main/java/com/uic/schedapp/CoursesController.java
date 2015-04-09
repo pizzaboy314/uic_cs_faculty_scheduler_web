@@ -47,17 +47,23 @@ public class CoursesController {
 		logger.info("Welcome to the faculty page! The client locale is {}.", locale);
 		
 		try {
-			downloadAndParseToDB();
+			loadFromDB();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}		
+		}
 		
 		model.addAttribute("courses", courses);
 		return "courses";
 	}
 	
+	public void loadFromDB() throws IOException{
+		downloadAndParseToDB();
+		SqlSession sqlSession = sessFactory.openSession();
+		CourseModelMapper cm = sqlSession.getMapper(CourseModelMapper.class);
+		courses = cm.selectByExample(null);
+	}
+	
 	public void downloadAndParseToDB() throws IOException {
-		courses = new ArrayList<CourseModel>();
 		SqlSession sqlSession = sessFactory.openSession();
 		CourseModelMapper cm = sqlSession.getMapper(CourseModelMapper.class);
 		
@@ -104,7 +110,6 @@ public class CoursesController {
 				c.setUNDERGRADHOURS((Integer)underGradHours);
 				c.setGRADHOURS((Integer)gradHours);
 				
-				courses.add(c);
 				if(cm.selectByPrimaryKey(c.getNUMBER()) == null){
 					cm.insert(c);
 				}
