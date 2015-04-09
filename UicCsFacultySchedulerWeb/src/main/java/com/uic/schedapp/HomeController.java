@@ -36,20 +36,18 @@ public class HomeController {
 	public String home(Locale locale, Model model) throws IOException {
 		logger.info("Welcome home! The client locale is {}.", locale);
 
-		SqlSession sqlSession = sessFactory.openSession();
-		StringBuilder randomString = new StringBuilder("Data Retrieved:\n");
-		
 		// EXAMPLE
-		CourseModelMapper cm = sqlSession.getMapper(CourseModelMapper.class);
-		List<CourseModel> list = cm.selectByExample(null);
-		for(CourseModel c : list){
-			randomString.append(c.getNAME());
-		}
+//		SqlSession sqlSession = sessFactory.openSession();
+//		StringBuilder randomString = new StringBuilder("Data Retrieved:\n");
+		
+//		CourseModelMapper cm = sqlSession.getMapper(CourseModelMapper.class);
+//		List<CourseModel> list = cm.selectByExample(null);
+//		for(CourseModel c : list){
+//			randomString.append(c.getNAME());
+//		}
 		// EXAMPLE
 		
-		randomString.append("\nEnd of retrieval");
-		
-		model.addAttribute("someString", randomString);
+//		model.addAttribute("someString", randomString);
 		
 		return "index";
 	}
