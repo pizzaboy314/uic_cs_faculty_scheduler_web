@@ -42,7 +42,7 @@
         <h1>Scheduling Tool</h1>
         		<table style="width:100%; border:10px, solid black">
 					<tr>
-					<!-- The Drag/Drop Box -->
+					<!-- The Drag/Drop Box
 						<td>
 							<div id='external-events'">
 								<h4>Courses</h4>
@@ -63,8 +63,22 @@
 									<label for='drop-remove'>remove after drop</label>
 								</p>
 						</td>
+						 The Drag/Drop Box -->
+						 
 						<!-- The Drag/Drop Box -->
 						
+						<td>
+							 <div id='external-events' style="height:400px;overflow-y:scroll;">
+								<h4>Courses</h4>
+								
+									<c:forEach var="course" items="${courses}">
+										<div class='fc-event' data-toggle="tootip" title="${course.NAME}" > 
+											CS ${course.NUMBER} 
+										</div>
+									</c:forEach>
+							</div>
+						</td>
+						<!-- The Drag/Drop Box -->
 						<td>				
 							<div id='calendar'></div>
 							<!-- embed src="fullcalendar/demos/external-dragging.html" -->

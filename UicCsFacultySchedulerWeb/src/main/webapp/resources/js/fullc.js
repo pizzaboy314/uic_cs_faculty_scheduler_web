@@ -1,6 +1,4 @@
 
- 
-
 $(document).ready(function() {
 	
 	/* initialize the external events
@@ -22,8 +20,11 @@ $(document).ready(function() {
 			revertDuration: 0  //  original position after the drag
 		});
 		
+		$(this).popover();
+		
 	
-	});
+	}
+	);
 	
 	
 	$('#calendar').fullCalendar({
@@ -32,6 +33,18 @@ $(document).ready(function() {
 			center: 'title',
 			right: 'agendaWeek'
 		},
+		/*
+		eventClick: function(calEvent, jsEvent, view) {
+
+	        alert('Event: ' + calEvent.title);
+	        $(this).js('popover');
+	        
+	        // change the border color just for fun
+	        //$(this).css('border-color', 'red');
+	        //$('.fc-event').popover('show');
+
+	    },*/
+		
 		drop: function() {
 			// is the "remove after drop" checkbox checked?
 			if ($('#drop-remove').is(':checked')) {
@@ -49,7 +62,6 @@ $(document).ready(function() {
 						}
 					}
 					)){
-				
 				}
 			
 		},
@@ -57,10 +69,13 @@ $(document).ready(function() {
 		defaultDate: '2015-02-12',
         minTime: '07:00:00',
         maxTime: '20:00:00',
+        weekends: false,
+		allDaySlot: false,
 		editable: true,
 		droppable: true, // this allows things to be dropped onto the calendar
 		eventLimit: true, // allow "more" link when too many events
 		events: [
+		        
 			{
 				title: 'SAMP 101',
 				start: '2015-02-12T10:30:00',
