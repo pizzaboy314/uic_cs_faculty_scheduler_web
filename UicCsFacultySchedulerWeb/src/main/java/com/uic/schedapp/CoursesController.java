@@ -35,9 +35,10 @@ import data.Instructor;
 
 @Controller
 public class CoursesController {
+	private static final long REFRESH_COURSES_TIME = 1000 * 60 * 10;//10 minutes
 	private static final Logger logger = LoggerFactory.getLogger(CoursesController.class);
-	
-	public static List<CourseModel> courses;
+	private static List<CourseModel> courses = null;
+	private static long lastUpdate = 0;
 	
 	@Autowired
 	private SqlSessionFactory sessFactory;
@@ -46,10 +47,13 @@ public class CoursesController {
 	public String coursesPage(Locale locale, Model model) {
 		logger.info("Welcome to the faculty page! The client locale is {}.", locale);
 		
-		try {
-			loadFromDB();
-		} catch (IOException e) {
-			e.printStackTrace();
+		if (courses == null || lastUpdate + REFRESH_COURSES_TIME < System.currentTimeMillis()){
+			lastUpdate = System.currentTimeMillis();
+			try {
+				loadFromDB();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		model.addAttribute("courses", courses);
