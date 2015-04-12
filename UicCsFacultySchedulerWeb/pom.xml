@@ -136,6 +136,7 @@
 			<version>3.3.2</version>
 		</dependency>
 
+		<!-- The Rest -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
@@ -155,6 +156,11 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.jconnector.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.google.code.gson</groupId>
+		    <artifactId>gson</artifactId>
+		    <version>2.3.1</version>
 		</dependency>
 	</dependencies>
 	<build>
