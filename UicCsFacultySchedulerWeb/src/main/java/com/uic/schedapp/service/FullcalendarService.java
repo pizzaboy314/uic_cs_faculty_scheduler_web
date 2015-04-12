@@ -40,8 +40,8 @@ public class FullcalendarService {
 	private void addDTOs(List<CalendarDTO> l){
 		CalendarDTO c = new CalendarDTO();
 		c.setId(1);
-		c.setStart("2013-07-28");
-		c.setEnd("2013-07-29");
+		c.setStart("2015-02-12T10:00:00");
+		c.setEnd("2015-02-12T11:30:00");
 		c.setTitle("Task in Progress");
 		l.add(c);
 //

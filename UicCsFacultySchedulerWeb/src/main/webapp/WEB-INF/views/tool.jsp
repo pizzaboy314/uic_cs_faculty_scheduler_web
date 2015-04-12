@@ -42,35 +42,10 @@
         <h1>Scheduling Tool</h1>
         		<table style="width:100%; border:10px, solid black">
 					<tr>
-					<!-- The Drag/Drop Box
-						<td>
-							<div id='external-events'">
-								<h4>Courses</h4>
-									<div class='fc-event'>CS 100</div>
-									<div class='fc-event'>CS 107</div>
-									<div class='fc-event'>CS 109</div>
-									<div class='fc-event'>CS 111</div>
-									<div class='fc-event'>CS 141</div>
-									<div class='fc-event'>CS 151</div>
-									<div class='fc-event'>CS 211</div>
-									<div class='fc-event'>CS 251</div>
-									<div class='fc-event'>CS 261</div>
-									<div class='fc-event'>CS 301</div>
-									<div class='fc-event'>CS 341</div>
-									<div class='fc-event'>CS 342</div>
-								<p>
-									<input type='checkbox' id='drop-remove' />
-									<label for='drop-remove'>remove after drop</label>
-								</p>
-						</td>
-						 The Drag/Drop Box -->
-						 
 						<!-- The Drag/Drop Box -->
-						
 						<td>
 							 <div id='external-events' style="height:400px;overflow-y:scroll;">
 								<h4>Courses</h4>
-								
 									<c:forEach var="course" items="${courses}">
 										<div class='fc-event' data-toggle="tootip" title="${course.NAME}" > 
 											CS ${course.NUMBER} 
