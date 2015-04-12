@@ -29,7 +29,10 @@
 
 
 		<!-- This section is where we specify the tables -->
-		<table schema="test" tableName="${datasource.rawTableName}" domainObjectName="${datasource.classTableName}" >
+		<table schema="test" tableName="${datasource.tablename.courses}" domainObjectName="${datasource.java.classname.courses}" >
+			<property name="useActualColumnNames" value="true"/>
+		</table>
+		<table schema="test" tableName="${datasource.tablename.sections}" domainObjectName="${datasource.java.classname.sections}" >
 			<property name="useActualColumnNames" value="true"/>
 		</table>
 
