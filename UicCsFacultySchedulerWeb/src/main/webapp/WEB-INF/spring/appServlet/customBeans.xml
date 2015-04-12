@@ -23,6 +23,9 @@
 		<property name="ignoreUnresolvablePlaceholders" value="true"/>
 	</bean>
 
+	<bean id="courseHandler" class="data.CoursesHandlerImpl" >
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
 	
 	<bean id="passChecker" class="com.uic.security.PasswordCheckerImpl" >
 		<property name="username" value="${test.appAdminUsername}"></property>

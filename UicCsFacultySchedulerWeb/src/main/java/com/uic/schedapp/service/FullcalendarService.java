@@ -22,7 +22,6 @@ public class FullcalendarService {
 	@RequestMapping(value = "/CalendarJsonServlet", method = RequestMethod.GET)
 	public void handleRequest(HttpServletRequest request, HttpServletResponse response){
 		List<CalendarDTO> l = new ArrayList<CalendarDTO>();
-		System.out.println("hhhh");
 		//This needs to change
 		addDTOs(l);
 
@@ -44,13 +43,6 @@ public class FullcalendarService {
 		c.setEnd("2015-02-12T11:30:00");
 		c.setTitle("Task in Progress");
 		l.add(c);
-//
-//		c = new CalendarDTO();
-//		c.setId(2);
-//		c.setStart("2013-07-26");
-//		c.setEnd("2013-08-28");
-//		c.setTitle("Task in Progress");
-//		l.add(c);
 	}
 		 
 
