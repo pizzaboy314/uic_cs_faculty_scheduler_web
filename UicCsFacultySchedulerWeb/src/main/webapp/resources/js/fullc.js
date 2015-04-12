@@ -79,7 +79,6 @@ $(document).ready(function() {
 		droppable: true, // this allows things to be dropped onto the calendar
 		eventLimit: true, // allow "more" link when too many events
 		events : "/schedapp/CalendarJsonServlet"
-	});
 // {
 // header : {
 // left : 'prev,next today',
@@ -132,7 +131,7 @@ $(document).ready(function() {
 //	
 //			]
 //	
-//		}
+	}
 	);
 	
 
