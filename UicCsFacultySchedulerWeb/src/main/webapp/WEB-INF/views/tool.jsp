@@ -44,6 +44,12 @@
 					<tr>
 						<!-- The Drag/Drop Box -->
 						<td>
+							<div class="box">
+								<div class="container-1">
+									<span class="icon"><i class="fa fa-search"></i></span>
+									<input type="search" id="classsearch" placeholder="Search..." />
+								</div>
+							</div>
 							 <div id='external-events' style="height:400px;overflow-y:scroll;">
 								<h4>Courses</h4>
 									<c:forEach var="course" items="${courses}">
@@ -59,15 +65,6 @@
 							<!-- embed src="fullcalendar/demos/external-dragging.html" -->
 							<!-- -->	
 						</td>
-						<td >
-							<div class="box">
-								<div class="container-1">
-									<span class="icon"><i class="fa fa-search"></i></span>
-									<input type="search" id="classsearch" placeholder="Search..." />
-								<div>
-							</div>
-						</td>
-							</div>
 					</tr>
 				</table>
     </div> <!-- /container -->
