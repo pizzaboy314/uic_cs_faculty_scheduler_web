@@ -22,7 +22,7 @@ public class FullcalendarService {
 	@RequestMapping(value = "/CalendarJsonServlet", method = RequestMethod.GET)
 	public void handleRequest(HttpServletRequest request, HttpServletResponse response){
 		List<CalendarDTO> l = new ArrayList<CalendarDTO>();
-
+		System.out.println("hhhh");
 		//This needs to change
 		addDTOs(l);
 
@@ -38,12 +38,12 @@ public class FullcalendarService {
 	}
 	
 	private void addDTOs(List<CalendarDTO> l){
-//		CalendarDTO c = new CalendarDTO();
-//		c.setId(1);
-//		c.setStart("2013-07-28");
-//		c.setEnd("2013-07-29");
-//		c.setTitle("Task in Progress");
-//		l.add(c);
+		CalendarDTO c = new CalendarDTO();
+		c.setId(1);
+		c.setStart("2013-07-28");
+		c.setEnd("2013-07-29");
+		c.setTitle("Task in Progress");
+		l.add(c);
 //
 //		c = new CalendarDTO();
 //		c.setId(2);
