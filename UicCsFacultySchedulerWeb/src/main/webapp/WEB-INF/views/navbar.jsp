@@ -37,6 +37,18 @@
 			<li>
 				<div>
 					<c:choose>
+						<c:when test="${not empty cookie['errorLogin']}">
+							<form action="${pageContext.request.contextPath}/login" method="post" class="navbar-form navbar-right">
+								<div class="form-group has-error">
+									<label for="user" class="control-label">Invalid username password combination</label>
+									<input type="text" name="user" id="user" placeholder="Username" class="form-control">
+
+									<input type="password" name="pwd" placeholder="Password"
+										class="form-control">
+								</div>
+								<button type="submit" class="btn btn-success">Sign in</button>
+							</form>
+						</c:when>
 	      				<c:when test="${empty cookie['LoggedIn']}">
 							<form action="${pageContext.request.contextPath}/login" method="post" class="navbar-form navbar-right">
 								<div class="form-group">

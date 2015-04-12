@@ -28,14 +28,21 @@ public class LoginService {
 		String pass = (String) request.getParameter("pwd");
 		logger.debug("Recievced username: " + user + ", password: " + pass);
 		
-		Cookie test = new Cookie("LoggedIn", "test");
-		test.setMaxAge(600);
+		Cookie test;
 		if (checker.isValid(user, pass)){
 			logger.debug("Accpeted username: " + user + ", password: " + pass);
+			test = new Cookie("LoggedIn", "test");
+			test.setMaxAge(600);
 			response.addCookie(test);
+			test = new Cookie("errorLogin", "test");
+			test.setMaxAge(0);//remove cookie
 		}else{
 			logger.debug("Invaid: " + user + ", password: " + pass);
+			test = new Cookie("errorLogin", "test");
+			test.setMaxAge(1);
+			
 		}
+		response.addCookie(test);
 		return "redirect:" + referer;
 	}
 
