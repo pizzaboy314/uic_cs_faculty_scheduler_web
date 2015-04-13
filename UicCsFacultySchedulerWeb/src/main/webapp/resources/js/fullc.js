@@ -21,17 +21,17 @@ $(document).ready(function() {
 		});
 		
 		$(this).tooltip();
-		
-	
+
 	}
 	);
-
+	
 	$('#calendar').fullCalendar({
 		header: {
 			left: 'prev,next today',
 			center: 'title',
 			right: 'agendaWeek'
 		},
+		// Tootltip/Popout for event info
 		eventMouseover: function(calEvent, jsEvent) {
 		    var tooltip = '<div class="tooltipevent" style="width:200px;height:100px;background:#3A87AD;position:absolute;z-index:10001;color:#FFF;text-align:left;">' + calEvent.title + '</div>';
 		    $("body").append(tooltip);
@@ -44,30 +44,48 @@ $(document).ready(function() {
 		        $('.tooltipevent').css('left', e.pageX + 20);
 		    });
 		},
+		// Hides tooltip
 		eventMouseout: function(calEvent, jsEvent) {
 		    $(this).css('z-index', 8);
 		    $('.tooltipevent').remove();
 		},
+		// Ignore
 	    removeEvents: function(event){
 	    	removeFunc();
 	    },
-	    eventClick: function (calEvent, jsEvent, view) {
-	    	if (!confirm ("Are you sure you want to remove this course?")){
-	    		$('#calendar').fullCalendar('refetchEvents', calEvent._id );
-	    	}
-	    	else{
-	    		//alert("Remove " + calEvent.title +"\nID " + calEvent._id);
-	    		$('#calendar').fullCalendar('removeEvents', calEvent._id );
-	    	}
-	    	//return true; 
+	    // Delete/Remove from calendar
+	    eventRender: function (event, element) {
+	        element.bind('mousedown', function (e) {
+	            if (e.which == 3) {// Right click
+	            	if (!confirm ("Are you sure you want to remove this course?")){
+	    	    		$('#calendar').fullCalendar('refetchEvents', event._id );
+	    	    	}
+	    	    	else{
+	    	    		//alert("Remove " + calEvent.title +"\nID " + calEvent._id);
+	    	    		$('#calendar').fullCalendar('removeEvents', event._id );
+	    	    	}
+	            }
+	        });
 	    },
+	    //Ignore
 		drop: function(calEvent) {
 			// is the "remove after drop" checkbox checked?
 			if ($('#drop-remove').is(':checked')) {
 				// if so, remove the element from the "Draggable Events" list
 				$(this).remove();
 			}
-			
+		},
+		// Clone "events"
+		eventClick: function(event, dayDelta, minuteDelta, allDay, revertFunc, jsEvent, ui, view) {
+		     var eventClone = {
+		         title:event.title,
+		         start: event.start,
+		         end: event.end,
+		     };
+		     // Render new event with new event object
+		     $('#calendar').fullCalendar('renderEvent', eventClone);
+		     // Revert the changes in parent event. To move it back to original position
+		     revertFunc();
 		},
 		defaultView: 'agendaWeek',
 		defaultDate: '2015-02-12',
@@ -79,6 +97,6 @@ $(document).ready(function() {
 		droppable: true, // this allows things to be dropped onto the calendar
 		eventLimit: true, // allow "more" link when too many events
 		events : "/schedapp/CalendarJsonServlet"
-			});
+		});
 
 	});
