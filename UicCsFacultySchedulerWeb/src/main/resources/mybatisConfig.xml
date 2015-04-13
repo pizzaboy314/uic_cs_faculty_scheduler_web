@@ -18,6 +18,7 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="generated/${datasource.classTableName}Mapper.xml"/>
+		<mapper resource="generated/${datasource.java.classname.courses}Mapper.xml"/>
+		<mapper resource="generated/${datasource.java.classname.sections}Mapper.xml"/>
 	</mappers>
 </configuration>

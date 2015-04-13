@@ -23,7 +23,7 @@
 		<property name="ignoreUnresolvablePlaceholders" value="true"/>
 	</bean>
 
-	<bean id="courseHandler" class="data.CoursesHandlerImpl" >
+	<bean id="courseHandler" class="data.CoursesHandlerImpl" init-method="getAllCourses" lazy-init="false">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	</bean>
 	
