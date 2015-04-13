@@ -55,9 +55,6 @@ public class FullcalendarService {
 			c.setStart(r.getStartTime());
 			c.setEnd(r.getStopTime());
 			l.add(c);
-//			c.setStart("2015-02-12T10:00:00");
-//			c.setEnd("2015-02-12T11:30:00");
-//			c.setTitle("Task in Progress");
 		}
 		s.close();
 	}
