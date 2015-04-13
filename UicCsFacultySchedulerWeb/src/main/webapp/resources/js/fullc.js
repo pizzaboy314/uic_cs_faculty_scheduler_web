@@ -1,4 +1,4 @@
-
+// FUllC.js
 $(document).ready(function() {
 	
 	/* initialize the external events
@@ -57,12 +57,8 @@ $(document).ready(function() {
 	    eventRender: function (event, element) {
 	        element.bind('mousedown', function (e) {
 	            if (e.which == 3) {// Right click
-	            	if (!confirm ("Are you sure you want to remove this course?")){
-	    	    		$('#calendar').fullCalendar('refetchEvents', event._id );
-	    	    	}
-	    	    	else{
-	    	    		//alert("Remove " + calEvent.title +"\nID " + calEvent._id);
-	    	    		$('#calendar').fullCalendar('removeEvents', event._id );
+	            	if (confirm ("Are you sure you want to remove this course?")){
+	            		$('#calendar').fullCalendar('removeEvents', event._id );
 	    	    	}
 	            }
 	        });
