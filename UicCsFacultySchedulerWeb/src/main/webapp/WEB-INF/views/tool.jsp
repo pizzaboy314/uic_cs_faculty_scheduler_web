@@ -73,7 +73,7 @@
 					</div>
 					<p></p>
 					<div id='external-events'
-						style="height: 400px; overflow-y: scroll;">
+						style="height: 400px; overflow-y: scroll; overflow-x: hidden; width: auto;">
 						<h4 style="text-align: center;">Drag Courses to Schedule</h4>
 						<c:forEach var="course" items="${courses}">
 							<div class='fc-event' data-toggle="tootip" title="${course.NAME}">

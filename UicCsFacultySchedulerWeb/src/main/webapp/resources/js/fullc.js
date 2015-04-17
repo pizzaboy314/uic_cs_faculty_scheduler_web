@@ -8,14 +8,17 @@ $(document).ready(function() {
 		// store data so the calendar knows to render an event upon drop
 		$(this).data('event', {
 			title: $.trim($(this).text()), // use the element's text as the event title
-			stick: true // maintain when user navigates (see docs on the renderEvent method)
+			stick: true, // maintain when user navigates (see docs on the renderEvent method)
 		});
 		
 		// make the event draggable using jQuery UI
 		$(this).draggable({
 			zIndex: 999,
+			helper: 'clone',
 			revert: true,      // will cause the event to go back to its
-			revertDuration: 0  //  original position after the drag
+			appendTo: 'body',
+			revertDuration: 0,  //  original position after the drag
+			scroll: false
 		});
 		
 		$(this).tooltip()
@@ -69,11 +72,11 @@ $(document).ready(function() {
 			}
 			var eventObj = $(this).data('event');
 			var copiedEventObject = $.extend({}, eventObj);
-			alert("calEvent: " + copiedEventObject.title);
+			alert("calEvent: " + copiedEventObject.title + "\ndate: " + date);
 			$.post("/schedapp/CalendarJsonServlet",
 			{
-				name: copiedEventObject.title,
-				city: "Duckburg"
+				title: copiedEventObject.title,
+				startTime: date.startDate
 			},
 			function(data,status){
 				//alert("Data: " + data + "\nStatus: " + status);
@@ -85,6 +88,7 @@ $(document).ready(function() {
 		         title:event.title,
 		         start: event.start,
 		         end: event.end,
+		         color: event.color
 		     };
 		     // Render new event with new event object
 		     $('#calendar').fullCalendar('renderEvent', eventClone);

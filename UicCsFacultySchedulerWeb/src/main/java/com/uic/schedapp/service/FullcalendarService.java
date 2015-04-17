@@ -39,23 +39,25 @@ public class FullcalendarService {
 		//This needs to change
 		addDTOs(l);
 
-		response.setContentType("application/json");
-		response.setCharacterEncoding("UTF-8");
-		PrintWriter out;
-		try {
-			out = response.getWriter();
-			out.write(new Gson().toJson(l));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		response.setContentType("application/json");
+//		response.setCharacterEncoding("UTF-8");
+//		PrintWriter out;
+//		try {
+//			out = response.getWriter();
+//			out.write(new Gson().toJson(l));
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 	}
 	@RequestMapping(value = "/CalendarJsonServlet", method = RequestMethod.POST)
 	public void handlePost(HttpServletRequest request, HttpServletResponse response){
 		logger.debug("In Calendar servlet post");
 		//Example from https://raw.githubusercontent.com/arshaw/fullcalendar/v2.1.1/demos/external-dragging.html
-		String courseTitle = request.getParameter("title");
+		String courseTitle = request.getParameter("title"),
+				start = request.getParameter("startDate");
+		logger.debug("Course Recieved: " + courseTitle);
 		SqlSession s = sf.openSession();
-		s.getMapper(generated.mybatis.model.SectionModel.class);
+		s.getMapper(SectionModelMapper.class);
 		s.close();
 	}
 	
@@ -66,9 +68,11 @@ public class FullcalendarService {
 		List<SectionModel> res = scMapper.selectByExample(null);
 		for (SectionModel r: res){
 			c = new CalendarDTO();
-			c.setTitle("CS " + r.getCourseNumber());
+			int cNum = r.getCourseNumber();
+			c.setTitle("CS R" + cNum);
 			c.setStart(r.getStartTime());
 			c.setEnd(r.getStopTime());
+			c.setColor(cNum < 200?"#fff":cNum < 200?"#ff00":"#ff0000");
 			l.add(c);
 		}
 		s.close();
