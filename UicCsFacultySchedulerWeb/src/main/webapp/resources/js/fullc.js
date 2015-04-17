@@ -4,7 +4,6 @@ $(document).ready(function() {
 	/* initialize the external events
 	-----------------------------------------------------------------*/
 	
-
 	$('#external-events .fc-event').each(function() {
 
 		// store data so the calendar knows to render an event upon drop
@@ -20,8 +19,7 @@ $(document).ready(function() {
 			revertDuration: 0  //  original position after the drag
 		});
 		
-		$(this).tooltip();
-
+		$(this).tooltip()
 	}
 	);
 	
