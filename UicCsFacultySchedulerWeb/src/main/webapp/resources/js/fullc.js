@@ -62,12 +62,23 @@ $(document).ready(function() {
 	        });
 	    },
 	    //Ignore
-		drop: function(calEvent) {
+		drop: function(date, js, ui) {
 			// is the "remove after drop" checkbox checked?
 			if ($('#drop-remove').is(':checked')) {
 				// if so, remove the element from the "Draggable Events" list
 				$(this).remove();
 			}
+			var eventObj = $(this).data('event');
+			var copiedEventObject = $.extend({}, eventObj);
+			alert("calEvent: " + copiedEventObject.title);
+			$.post("/schedapp/CalendarJsonServlet",
+			{
+				name: copiedEventObject.title,
+				city: "Duckburg"
+			},
+			function(data,status){
+				//alert("Data: " + data + "\nStatus: " + status);
+			});
 		},
 		// Clone "events"
 		eventClick: function(event, dayDelta, minuteDelta, allDay, revertFunc, jsEvent, ui, view) {

@@ -7,23 +7,29 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.google.gson.Gson;
+import com.uic.schedapp.ContactController;
 
 import data.CalendarDTO;
 
 @Controller
 public class FullcalendarService {
+	private static final Logger logger = LoggerFactory.getLogger(FullcalendarService.class);
+	
 	@Autowired
 	SqlSessionFactory sf;
 
@@ -42,6 +48,15 @@ public class FullcalendarService {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	@RequestMapping(value = "/CalendarJsonServlet", method = RequestMethod.POST)
+	public void handlePost(HttpServletRequest request, HttpServletResponse response){
+		logger.debug("In Calendar servlet post");
+		//Example from https://raw.githubusercontent.com/arshaw/fullcalendar/v2.1.1/demos/external-dragging.html
+		String courseTitle = request.getParameter("title");
+		SqlSession s = sf.openSession();
+		s.getMapper(generated.mybatis.model.SectionModel.class);
+		s.close();
 	}
 	
 	private void addDTOs(List<CalendarDTO> l){
