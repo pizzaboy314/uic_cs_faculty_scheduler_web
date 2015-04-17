@@ -52,7 +52,6 @@
 	type="text/javascript"></script>
 </head>
 
-
 <body>
 	<!-- Fixed navbar -->
 	<nav class="navbar navbar-default navbar-static-top">
