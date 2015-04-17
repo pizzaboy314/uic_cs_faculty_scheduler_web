@@ -76,8 +76,28 @@
 						style="height: 400px; overflow-y: scroll; overflow-x: hidden; width: auto;">
 						<h4 style="text-align: center;">Drag Courses to Schedule</h4>
 						<c:forEach var="course" items="${courses}">
-							<div class='fc-event' data-toggle="tootip" title="${course.NAME}">
-								CS ${course.NUMBER}</div>
+							<c:choose>
+								<c:when test="${course.NUMBER < 200}">
+									<div class='fc-event' style='background-color: #ffeeee;' data-toggle="tootip" title="${course.NAME}">
+										CS ${course.NUMBER}</div>
+								</c:when>
+								<c:when test="${course.NUMBER < 300}">
+									<div class='fc-event' style='color: black; background-color: #ff0;' data-toggle="tootip" title="${course.NAME}">
+										CS ${course.NUMBER}</div>
+								</c:when>
+								<c:when test="${course.NUMBER < 400}">
+									<div class='fc-event' style='background-color: #ff0000;' data-toggle="tootip" title="${course.NAME}">
+										CS ${course.NUMBER}</div>
+								</c:when>
+								<c:when test="${course.NUMBER < 500}">
+									<div class='fc-event' style='background-color: #11e;' data-toggle="tootip" title="${course.NAME}">
+										CS ${course.NUMBER}</div>
+								</c:when>
+								<c:otherwise>
+									<div class='fc-event' data-toggle="tootip" title="${course.NAME}">
+										CS ${course.NUMBER}</div>
+								</c:otherwise>
+							</c:choose>
 						</c:forEach>
 					</div>
 				</td>
