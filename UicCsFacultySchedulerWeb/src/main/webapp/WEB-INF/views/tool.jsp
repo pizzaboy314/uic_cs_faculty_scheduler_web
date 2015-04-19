@@ -78,24 +78,30 @@
 						<c:forEach var="course" items="${courses}">
 							<c:choose>
 								<c:when test="${course.NUMBER < 200}">
-									<div class='fc-event' style='background-color: #ffeeee;' data-toggle="tootip" title="${course.NAME}">
-										CS ${course.NUMBER}</div>
+									<div class='fc-event'
+										style='color: black; background-color: #ffeeee;'
+										data-toggle="tootip" title="${course.NAME}">CS
+										${course.NUMBER}</div>
 								</c:when>
 								<c:when test="${course.NUMBER < 300}">
-									<div class='fc-event' style='color: black; background-color: #ff0;' data-toggle="tootip" title="${course.NAME}">
-										CS ${course.NUMBER}</div>
+									<div class='fc-event'
+										style='color: black; background-color: #ff0;'
+										data-toggle="tootip" title="${course.NAME}">CS
+										${course.NUMBER}</div>
 								</c:when>
 								<c:when test="${course.NUMBER < 400}">
-									<div class='fc-event' style='background-color: #ff0000;' data-toggle="tootip" title="${course.NAME}">
-										CS ${course.NUMBER}</div>
+									<div class='fc-event' style='background-color: #ff0000;'
+										data-toggle="tootip" title="${course.NAME}">CS
+										${course.NUMBER}</div>
 								</c:when>
 								<c:when test="${course.NUMBER < 500}">
-									<div class='fc-event' style='background-color: #11e;' data-toggle="tootip" title="${course.NAME}">
-										CS ${course.NUMBER}</div>
+									<div class='fc-event' style='background-color: #11e;'
+										data-toggle="tootip" title="${course.NAME}">CS
+										${course.NUMBER}</div>
 								</c:when>
 								<c:otherwise>
-									<div class='fc-event' data-toggle="tootip" title="${course.NAME}">
-										CS ${course.NUMBER}</div>
+									<div class='fc-event' data-toggle="tootip"
+										title="${course.NAME}">CS ${course.NUMBER}</div>
 								</c:otherwise>
 							</c:choose>
 						</c:forEach>
@@ -103,27 +109,29 @@
 				</td>
 				<!-- The Drag/Drop Box -->
 				<td>
+					<button id='options' type="button" class="btn btn-default btn-lg"
+						style="text-align: center; color: white; background-color: #428bca; font-size: 1.2em;">Clear</button>
+					
+					<button type="button" class="btn btn-default btn-lg"
+						style="text-align: center; color: white; background-color: #f0ad4e; font-size: 1.2em;">Redo</button>
+					
+					<button type="button" class="btn btn-default btn-lg"
+						style="text-align: center; color: white; background-color: #d9534f; font-size: 1.2em;">Undo</button>
+					
+					<button type="button" class="btn btn-default btn-lg"
+						style="text-align: center; color: white; background-color: #5cb85c; font-size: 1.2em;">Save</button>
+					<p></p>
 					<div id='calendar'></div> <!-- embed src="fullcalendar/demos/external-dragging.html" -->
 					<!-- -->
 				</td>
 				<!-- Tools -->
 				<td>
-					<button type="button" class="btn btn-default btn-lg"
-						style="text-align: center;">Clear</button>
-					<p></p>
-					<button type="button" class="btn btn-default btn-lg">Redo</button>
-					<p></p>
-					<button type="button" class="btn btn-default btn-lg">Undo</button>
-					<p></p>
-					<button type="button" class="btn btn-default btn-lg"
-						style="text-align: center;">Save</button>
-					<p></p>
-					<div id='external-events'
-						style="height: 200px; overflow-y: scroll;">
-						<h4 style="text-align: center;">Trash Can</h4>
+				
+					<div id='external-events' style="height: 200px; background-color: #eee ">
+						<h4 style="text-align: center;">Trash Can</h4> 
 						<p>To remove courses from schedule, drag into this area.</p>
 						<span class="icon"> <i class="glyphicon glyphicon-trash"
-							style="margin-left: 55px; color: gray;"></i>
+							style="margin-left: 45px; color: gray; font-size: 2.2em;"></i>
 						</span>
 					</div>
 				</td>
@@ -139,6 +147,9 @@
 	<script
 		src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.min.js"
 		type="text/javascript"></script>
+	<script>
+	
+	</script>
 
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<!--script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script-->
