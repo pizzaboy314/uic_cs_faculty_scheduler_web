@@ -78,23 +78,23 @@
 						<c:forEach var="course" items="${courses}">
 							<c:choose>
 								<c:when test="${course.NUMBER < 200}">
-									<div class='fc-event' style='background-color: #ffeeee;' data-toggle="tootip" title="${course.NAME}">
+									<div class='fc-event' style='background-color: ${pre200BGColor}; color: ${pre200TXColor};' data-toggle="tootip" title="${course.NAME}">
 										CS ${course.NUMBER}</div>
 								</c:when>
 								<c:when test="${course.NUMBER < 300}">
-									<div class='fc-event' style='color: black; background-color: #ff0;' data-toggle="tootip" title="${course.NAME}">
+									<div class='fc-event' style='color: black; background-color: ${pre300BGColor}; color: ${pre300TXColor};' data-toggle="tootip" title="${course.NAME}">
 										CS ${course.NUMBER}</div>
 								</c:when>
 								<c:when test="${course.NUMBER < 400}">
-									<div class='fc-event' style='background-color: #ff0000;' data-toggle="tootip" title="${course.NAME}">
+									<div class='fc-event' style='background-color: ${pre400BGColor}; color: ${pre400TXColor};' data-toggle="tootip" title="${course.NAME}">
 										CS ${course.NUMBER}</div>
 								</c:when>
 								<c:when test="${course.NUMBER < 500}">
-									<div class='fc-event' style='background-color: #11e;' data-toggle="tootip" title="${course.NAME}">
+									<div class='fc-event' style='background-color: ${pre500BGColor}; color: ${pre500TXColor};' data-toggle="tootip" title="${course.NAME}">
 										CS ${course.NUMBER}</div>
 								</c:when>
 								<c:otherwise>
-									<div class='fc-event' data-toggle="tootip" title="${course.NAME}">
+									<div class='fc-event' style='background-color: ${defaultBGColor}; color: ${defaultTXColor};' data-toggle="tootip" title="${course.NAME}">
 										CS ${course.NUMBER}</div>
 								</c:otherwise>
 							</c:choose>
