@@ -71,7 +71,6 @@
 								style="margin-left: -30px; color: gray;"></i></span>
 						</div>
 					</div>
-					<p></p>
 					<div id='external-events'
 						style="height: 400px; overflow-y: scroll; overflow-x: hidden; width: auto;">
 						<h4 style="text-align: center;">Drag Courses to Schedule</h4>
@@ -108,24 +107,28 @@
 				</td>
 				<!-- The Drag/Drop Box -->
 				<td>
-					<button id='options' type="button" class="btn btn-default btn-lg"
-						style="text-align: center; color: white; background-color: #428bca; font-size: 1.2em;">Clear</button>
 					
-					<button type="button" class="btn btn-default btn-lg"
-						style="text-align: center; color: white; background-color: #f0ad4e; font-size: 1.2em;">Redo</button>
-					
-					<button type="button" class="btn btn-default btn-lg"
-						style="text-align: center; color: white; background-color: #d9534f; font-size: 1.2em;">Undo</button>
-					
-					<button type="button" class="btn btn-default btn-lg"
-						style="text-align: center; color: white; background-color: #5cb85c; font-size: 1.2em;">Save</button>
-					<p></p>
 					<div id='calendar'></div> <!-- embed src="fullcalendar/demos/external-dragging.html" -->
 					<!-- -->
 				</td>
 				<!-- Tools -->
 				<td>
-				
+					<table>
+						<tr>
+							<button type="button" class="btn btn-default btn-lg"
+								style="text-align: center; color: white; background-color: #5cb85c; font-size: 1.2em;">Save</button>
+						
+							<button id='options' type="button" class="btn btn-default btn-lg"
+							style="text-align: center; color: white; background-color: #428bca; font-size: 1.2em;">Clear</button>
+						</tr>
+						<tr>
+							<button type="button" class="btn btn-default btn-lg"
+								style="text-align: center; color: white; background-color: #d9534f; font-size: 1.2em;">Undo</button>
+							
+							<button type="button" class="btn btn-default btn-lg"
+							style="text-align: center; color: white; background-color: #f0ad4e; font-size: 1.2em;">Redo</button>
+						</tr>
+					</table>
 					<div id='external-events' style="height: 200px; background-color: #eee ">
 						<h4 style="text-align: center;">Trash Can</h4> 
 						<p>To remove courses from schedule, drag into this area.</p>
