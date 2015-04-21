@@ -14,7 +14,7 @@
 	<div id="navbar" class="navbar-collapse collapse">
 		<div>
 		<a class="navbar-brand" href="${pageContext.request.contextPath}">
-			<img  alt="UIC" style="max-width:100%; height:50px;" src="${pageContext.request.contextPath}/resources/img/UICsquare.svg">
+			<img  alt="UIC" style="max-width:100%; height:50px;" src="${pageContext.request.contextPath}/resources/img/UICsquare2.svg">
 		</a>
 		</div>
 		<ul class="nav navbar-nav">
