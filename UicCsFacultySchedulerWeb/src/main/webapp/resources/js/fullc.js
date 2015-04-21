@@ -28,9 +28,15 @@ $(document).ready(function() {
 	
 	$('#calendar').fullCalendar({
 		header: {
-			left: 'prev,next today',
-			center: 'title',
-			right: 'agendaWeek'
+			left: '',
+			center: '',
+			right: ''
+			//right: 'prev,next today'
+		},
+		columnFormat: { 
+			month: '', 
+			week: 'ddd', 
+			day: '' 
 		},
 		// Tootltip/Popout for event info
 		eventMouseover: function(calEvent, jsEvent) {
