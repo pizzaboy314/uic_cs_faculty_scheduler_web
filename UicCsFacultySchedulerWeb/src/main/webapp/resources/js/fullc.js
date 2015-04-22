@@ -83,7 +83,6 @@ $(document).ready(function() {
 			var eventObj = $(this).data('event');
 			var copiedEventObject = $.extend({}, eventObj);
 			var dateISO = date.toISOString();
-			alert("calEvent: " + copiedEventObject.title + "\ndate: " + date);
 			$.post("/schedapp/CalendarJsonServlet",
 			{
 				startTime: dateISO,
