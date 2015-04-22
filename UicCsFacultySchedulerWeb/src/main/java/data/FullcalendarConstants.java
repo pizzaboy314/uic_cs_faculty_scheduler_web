@@ -1,6 +1,10 @@
 package data;
 
-public interface FullcalendarConstants {
+import java.lang.reflect.Field;
+
+import org.springframework.ui.Model;
+
+public abstract class FullcalendarConstants {
 	//HTML Hex values for colors
 	public static final String PRE200_COL_BG = "#E598F5";
 	public static final String PRE200_COL_TX = "#000000";
@@ -16,5 +20,13 @@ public interface FullcalendarConstants {
 	//DEFUALT Length for date
 	public static final String DEFAULT_EVENT_LENGTH = "01:00:00";//HH:MM:SS
 				//Hardcoded to DEFAULT_EVENT_LENGTH in JSP hidden element
+	
+
+	public static void addColorAttributes(Model model) throws Exception {
+		Field[] fds = FullcalendarConstants.class.getDeclaredFields();
+		for (Field f : fds){
+			model.addAttribute(f.getName(), f.get(null));
+		}
+	}
 	
 }
