@@ -65,13 +65,12 @@
 			<tr>
 				<!-- The Drag/Drop Box -->
 				<td>
-					<div class="box">
-						<div class="container-1">
-							<input type="search" id="classsearch" placeholder="Search..." />
-							<span class="icon"><i class="glyphicon glyphicon-search"
-								style="margin-left: -30px; color: gray;"></i></span>
+					<form role="form">
+						<div class="form-group has-feedback" style="width: 200px;">
+							<input type="text" class="form-control" placeholder="Search..." />
+							<i class="form-control-feedback glyphicon glyphicon-search"></i>
 						</div>
-					</div>
+					</form>
 					<div id='external-events'
 						style="height: 400px; overflow-y: scroll; overflow-x: hidden; width: auto;">
 						<h4 style="text-align: center;">Drag Courses to Schedule</h4>
