@@ -57,6 +57,7 @@
 	<nav class="navbar navbar-default navbar-static-top">
 		<jsp:include page="navbar.jsp" />
 	</nav>
+	<input type="hidden" id="DEFAULT_EVENT_LENGTH" value="${DEFAULT_EVENT_LENGTH}">
 
 	<div class="container">
 		<h1>Scheduling Tool</h1>
@@ -77,27 +78,27 @@
 						<c:forEach var="course" items="${courses}">
 							<c:choose>
 								<c:when test="${course.NUMBER < 200}">
-									<div class='fc-event' style='background-color: ${pre200BGColor}; color: ${pre200TXColor};' data-toggle="tootip" title="${course.NAME}">
+									<div class='fc-event' style='background-color: ${PRE200_COL_BG}; color: ${PRE200_COL_TX};' data-toggle="tootip" title="${course.NAME}">
 										CS ${course.NUMBER}
 									</div>
 								</c:when>
 								<c:when test="${course.NUMBER < 300}">
-									<div class='fc-event' style='background-color: ${pre300BGColor}; color: ${pre300TXColor};' data-toggle="tootip" title="${course.NAME}">
+									<div class='fc-event' style='background-color: ${PRE300_COL_BG}; color: ${PRE300_COL_TX};' data-toggle="tootip" title="${course.NAME}">
 										CS ${course.NUMBER}
 									</div>
 								</c:when>
 								<c:when test="${course.NUMBER < 400}">
-									<div class='fc-event' style='background-color: ${pre400BGColor}; color: ${pre400TXColor};' data-toggle="tootip" title="${course.NAME}">
+									<div class='fc-event' style='background-color: ${PRE400_COL_BG}; color: ${PRE400_COL_TX};' data-toggle="tootip" title="${course.NAME}">
 										CS ${course.NUMBER}
 									</div>
 								</c:when>
 								<c:when test="${course.NUMBER < 500}">
-									<div class='fc-event' style='background-color: ${pre500BGColor}; color: ${pre500TXColor};' data-toggle="tootip" title="${course.NAME}">
+									<div class='fc-event' style='background-color: ${PRE500_COL_BG}; color: ${PRE500_COL_TX};' data-toggle="tootip" title="${course.NAME}">
 										CS ${course.NUMBER}
 									</div>
 								</c:when>
 								<c:otherwise>
-									<div class='fc-event' style='background-color: ${defaultBGColor}; color: ${defaultTXColor};' data-toggle="tootip" title="${course.NAME}">
+									<div class='fc-event' style='background-color: ${DEFAULT_COL_BG}; color: ${DEFAULT_COL_TX};' data-toggle="tootip" title="${course.NAME}">
 										CS ${course.NUMBER}
 									</div>
 								</c:otherwise>

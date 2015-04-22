@@ -6,6 +6,7 @@ import generated.mybatis.model.SectionModel;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
 
@@ -54,8 +55,13 @@ public class FullcalendarService {
 		logger.debug("In Calendar servlet post");
 		//Example from https://raw.githubusercontent.com/arshaw/fullcalendar/v2.1.1/demos/external-dragging.html
 		String courseTitle = request.getParameter("title"),
-				start = request.getParameter("startDate");
+				start = request.getParameter("startTime");
+		Enumeration e = request.getParameterNames();
+		for (Object o = e.nextElement(); e.hasMoreElements(); o = e.nextElement()){
+			System.out.println(o.toString());
+		}
 		logger.debug("Course Recieved: " + courseTitle);
+		logger.debug("Course Recieved: " + start);
 		SqlSession s = sf.openSession();
 		s.getMapper(SectionModelMapper.class);
 		s.close();

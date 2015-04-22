@@ -1,15 +1,15 @@
 package com.uic.schedapp;
 
-import static data.CourseColor.DEFAULT_COL_BG;
-import static data.CourseColor.DEFAULT_COL_TX;
-import static data.CourseColor.PRE200_BG;
-import static data.CourseColor.PRE200_TX;
-import static data.CourseColor.PRE300_BG;
-import static data.CourseColor.PRE300_TX;
-import static data.CourseColor.PRE400_BG;
-import static data.CourseColor.PRE400_TX;
-import static data.CourseColor.PRE500_BG;
-import static data.CourseColor.PRE500_TX;
+import static data.FullcalendarConstants.DEFAULT_COL_BG;
+import static data.FullcalendarConstants.DEFAULT_COL_TX;
+import static data.FullcalendarConstants.PRE200_COL_BG;
+import static data.FullcalendarConstants.PRE200_COL_TX;
+import static data.FullcalendarConstants.PRE300_COL_BG;
+import static data.FullcalendarConstants.PRE300_COL_TX;
+import static data.FullcalendarConstants.PRE400_COL_BG;
+import static data.FullcalendarConstants.PRE400_COL_TX;
+import static data.FullcalendarConstants.PRE500_COL_BG;
+import static data.FullcalendarConstants.PRE500_COL_TX;
 import generated.mybatis.model.CourseModel;
 
 import java.io.IOException;
@@ -42,14 +42,14 @@ public class HomeController {
 	private CoursesHandler cHandler;
 	
 	private void addColorAttributes(Model model){
-		model.addAttribute("pre200BGColor", PRE200_BG);
-		model.addAttribute("pre200TXColor", PRE200_TX);
-		model.addAttribute("pre300BGColor", PRE300_BG);
-		model.addAttribute("pre300TXColor", PRE300_TX);
-		model.addAttribute("pre400BGColor", PRE400_BG);
-		model.addAttribute("pre400TXColor", PRE400_TX);
-		model.addAttribute("pre500BGColor", PRE500_BG);
-		model.addAttribute("pre500TXColor", PRE500_TX);
+		model.addAttribute("pre200BGColor", PRE200_COL_BG);
+		model.addAttribute("pre200TXColor", PRE200_COL_TX);
+		model.addAttribute("pre300BGColor", PRE300_COL_BG);
+		model.addAttribute("pre300TXColor", PRE300_COL_TX);
+		model.addAttribute("pre400BGColor", PRE400_COL_BG);
+		model.addAttribute("pre400TXColor", PRE400_COL_TX);
+		model.addAttribute("pre500BGColor", PRE500_COL_BG);
+		model.addAttribute("pre500TXColor", PRE500_COL_TX);
 		model.addAttribute("defaultBGColor", DEFAULT_COL_BG);
 		model.addAttribute("defaultTXColor", DEFAULT_COL_TX);
 	}

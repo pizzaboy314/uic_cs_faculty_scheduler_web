@@ -1,4 +1,5 @@
 // FUllC.js
+
 $(document).ready(function() {
 	
 	/* initialize the external events
@@ -38,6 +39,8 @@ $(document).ready(function() {
 			week: 'ddd', 
 			day: '' 
 		},
+		defaultTimedEventDuration: document.getElementById("DEFAULT_EVENT_LENGTH").value,
+	    forceEventDuration: true,
 		// Tootltip/Popout for event info
 		eventMouseover: function(calEvent, jsEvent) {
 		    var tooltip = '<div class="tooltipevent" style="width:200px;height:100px;background:#3A87AD;position:absolute;z-index:10001;color:#FFF;text-align:left;">' + calEvent.title + '</div>';
@@ -79,11 +82,12 @@ $(document).ready(function() {
 			}
 			var eventObj = $(this).data('event');
 			var copiedEventObject = $.extend({}, eventObj);
+			var dateISO = date.toISOString();
 			alert("calEvent: " + copiedEventObject.title + "\ndate: " + date);
 			$.post("/schedapp/CalendarJsonServlet",
 			{
+				startTime: dateISO,
 				title: copiedEventObject.title,
-				startTime: date.startDate
 			},
 			function(data,status){
 				//alert("Data: " + data + "\nStatus: " + status);
