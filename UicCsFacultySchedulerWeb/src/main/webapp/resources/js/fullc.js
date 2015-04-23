@@ -72,6 +72,16 @@ $(document).ready(function() {
 	    	    	}
 	            }
 	        });
+	        
+	        element.append( "<button id='drop-remove'>X</button>" );
+            element.find('#drop-remove').click(function() {
+               $('#calendar').fullCalendar('removeEvents');
+            });
+            
+            element.append( "<button id='undo-opt'>X</button>" );
+            element.find('#undo-opt').click(function() {
+               $('#calendar').fullCalendar('refetchEvents', event._id);
+            });
 	    },
 	    //Ignore
 		drop: function(date, js, ui) {
@@ -80,6 +90,9 @@ $(document).ready(function() {
 				// if so, remove the element from the "Draggable Events" list
 				$(this).remove();
 			}
+			$('#drop-remove').click( function(){
+				$('#calendar').fullCalendar('removeEvents');
+			});
 			var eventObj = $(this).data('event');
 			var copiedEventObject = $.extend({}, eventObj);
 			var dateISO = date.toISOString();

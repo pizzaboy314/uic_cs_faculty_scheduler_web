@@ -57,7 +57,8 @@
 	<nav class="navbar navbar-default navbar-static-top">
 		<jsp:include page="navbar.jsp" />
 	</nav>
-	<input type="hidden" id="DEFAULT_EVENT_LENGTH" value="${DEFAULT_EVENT_LENGTH}">
+	<input type="hidden" id="DEFAULT_EVENT_LENGTH"
+		value="${DEFAULT_EVENT_LENGTH}">
 
 	<div class="container">
 		<h1>Scheduling Tool</h1>
@@ -77,29 +78,34 @@
 						<c:forEach var="course" items="${courses}">
 							<c:choose>
 								<c:when test="${course.NUMBER < 200}">
-									<div class='fc-event' style='background-color: ${PRE200_COL_BG}; color: ${PRE200_COL_TX};' data-toggle="tootip" title="${course.NAME}">
-										CS ${course.NUMBER}
-									</div>
+									<div class='fc-event'
+										style='background-color: ${PRE200_COL_BG}; color: ${PRE200_COL_TX};'
+										data-toggle="tootip" title="${course.NAME}">CS
+										${course.NUMBER}</div>
 								</c:when>
 								<c:when test="${course.NUMBER < 300}">
-									<div class='fc-event' style='background-color: ${PRE300_COL_BG}; color: ${PRE300_COL_TX};' data-toggle="tootip" title="${course.NAME}">
-										CS ${course.NUMBER}
-									</div>
+									<div class='fc-event'
+										style='background-color: ${PRE300_COL_BG}; color: ${PRE300_COL_TX};'
+										data-toggle="tootip" title="${course.NAME}">CS
+										${course.NUMBER}</div>
 								</c:when>
 								<c:when test="${course.NUMBER < 400}">
-									<div class='fc-event' style='background-color: ${PRE400_COL_BG}; color: ${PRE400_COL_TX};' data-toggle="tootip" title="${course.NAME}">
-										CS ${course.NUMBER}
-									</div>
+									<div class='fc-event'
+										style='background-color: ${PRE400_COL_BG}; color: ${PRE400_COL_TX};'
+										data-toggle="tootip" title="${course.NAME}">CS
+										${course.NUMBER}</div>
 								</c:when>
 								<c:when test="${course.NUMBER < 500}">
-									<div class='fc-event' style='background-color: ${PRE500_COL_BG}; color: ${PRE500_COL_TX};' data-toggle="tootip" title="${course.NAME}">
-										CS ${course.NUMBER}
-									</div>
+									<div class='fc-event'
+										style='background-color: ${PRE500_COL_BG}; color: ${PRE500_COL_TX};'
+										data-toggle="tootip" title="${course.NAME}">CS
+										${course.NUMBER}</div>
 								</c:when>
 								<c:otherwise>
-									<div class='fc-event' style='background-color: ${DEFAULT_COL_BG}; color: ${DEFAULT_COL_TX};' data-toggle="tootip" title="${course.NAME}">
-										CS ${course.NUMBER}
-									</div>
+									<div class='fc-event'
+										style='background-color: ${DEFAULT_COL_BG}; color: ${DEFAULT_COL_TX};'
+										data-toggle="tootip" title="${course.NAME}">CS
+										${course.NUMBER}</div>
 								</c:otherwise>
 							</c:choose>
 						</c:forEach>
@@ -107,30 +113,24 @@
 				</td>
 				<!-- The Drag/Drop Box -->
 				<td>
-					
+				<td>
+					<button id='drop-remove' type="button" class="btn btn-default btn-lg"
+						style="text-align: center; color: white; background-color: #428bca; font-size: 1.2em;">Clear</button>
+						
+					<button id='undo-opt' type="button" class="btn btn-default btn-lg"
+						style="text-align: center; color: white; background-color: #d9534f; font-size: 1.2em;">Undo</button>
+						
+					<button type="button" class="btn btn-default btn-lg"
+						style="text-align: center; color: white; background-color: #f0ad4e; font-size: 1.2em;">Redo</button>
+						
 					<div id='calendar'></div> <!-- embed src="fullcalendar/demos/external-dragging.html" -->
 					<!-- -->
 				</td>
 				<!-- Tools -->
 				<td>
-					<table>
-						<tr>
-							<button type="button" class="btn btn-default btn-lg"
-								style="text-align: center; color: white; background-color: #5cb85c; font-size: 1.2em;">Save</button>
-						
-							<button id='options' type="button" class="btn btn-default btn-lg"
-							style="text-align: center; color: white; background-color: #428bca; font-size: 1.2em;">Clear</button>
-						</tr>
-						<tr>
-							<button type="button" class="btn btn-default btn-lg"
-								style="text-align: center; color: white; background-color: #d9534f; font-size: 1.2em;">Undo</button>
-							
-							<button type="button" class="btn btn-default btn-lg"
-							style="text-align: center; color: white; background-color: #f0ad4e; font-size: 1.2em;">Redo</button>
-						</tr>
-					</table>
-					<div id='external-events' style="height: 200px; background-color: #eee ">
-						<h4 style="text-align: center;">Trash Can</h4> 
+					<div id='external-events'
+						style="height: 200px; background-color: #eee">
+						<h4 style="text-align: center;">Trash Can</h4>
 						<p>To remove courses from schedule, drag into this area.</p>
 						<span class="icon"> <i class="glyphicon glyphicon-trash"
 							style="margin-left: 45px; color: gray; font-size: 2.2em;"></i>
