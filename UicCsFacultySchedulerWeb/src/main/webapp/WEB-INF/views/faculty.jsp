@@ -51,7 +51,7 @@
 					<h3>${instructor.name}</h3>
 					<p><a style="font-weight: bold;" href="mailto:${instructor.email}">${instructor.email}</a></p>
 					<p><span style="font-weight: bold;">Background:</span> ${instructor.background}</p>
-					</br>
+					<br/>
 				</div>
 			</c:forEach>
 		</div>

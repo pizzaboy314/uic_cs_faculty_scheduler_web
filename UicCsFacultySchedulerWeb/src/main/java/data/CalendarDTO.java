@@ -5,14 +5,23 @@ public class CalendarDTO {
 	public String title;
 	public String start;
 	public String end;
-	public String color;
+	public String backgroundColor;
+	public String textColor;
 
-	public String getColor() {
-		return color;
+	public String getBackgroundColor() {
+		return backgroundColor;
 	}
 
-	public void setColor(String color) {
-		this.color = color;
+	public void setBackgroundColor(String color) {
+		this.backgroundColor = color;
+	}
+
+	public String getTextColor() {
+		return textColor;
+	}
+
+	public void setTextColor(String textColor) {
+		this.textColor = textColor;
 	}
 
 	public int getId() {

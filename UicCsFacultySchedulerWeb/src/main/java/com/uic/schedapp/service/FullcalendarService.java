@@ -3,12 +3,9 @@ package com.uic.schedapp.service;
 import generated.mybatis.dao.SectionModelMapper;
 import generated.mybatis.model.SectionModel;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,9 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import com.google.gson.Gson;
-import com.uic.schedapp.ContactController;
 
 import data.CalendarDTO;
 
@@ -56,12 +50,13 @@ public class FullcalendarService {
 		//Example from https://raw.githubusercontent.com/arshaw/fullcalendar/v2.1.1/demos/external-dragging.html
 		String courseTitle = request.getParameter("title"),
 				start = request.getParameter("startTime");
+		@SuppressWarnings("rawtypes")
 		Enumeration e = request.getParameterNames();
 		for (Object o = e.nextElement(); e.hasMoreElements(); o = e.nextElement()){
 			System.out.println(o.toString());
 		}
 		logger.debug("Course Recieved: " + courseTitle);
-		logger.debug("Course Recieved: " + start);
+		logger.debug("Start Time Recieved: " + start);
 		SqlSession s = sf.openSession();
 		s.getMapper(SectionModelMapper.class);
 		s.close();
@@ -75,10 +70,10 @@ public class FullcalendarService {
 		for (SectionModel r: res){
 			c = new CalendarDTO();
 			int cNum = r.getCourseNumber();
-			c.setTitle("CS R" + cNum);
+			c.setTitle("CS " + cNum);
 			c.setStart(r.getStartTime());
 			c.setEnd(r.getStopTime());
-			c.setColor(cNum < 200?"#fff":cNum < 200?"#ff00":"#ff0000");
+			c.setBackgroundColor(cNum < 200?"#fff":cNum < 200?"#ff00":"#ff0000");
 			l.add(c);
 		}
 		s.close();

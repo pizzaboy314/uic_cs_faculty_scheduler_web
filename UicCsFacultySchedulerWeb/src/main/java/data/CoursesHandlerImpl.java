@@ -15,7 +15,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class CoursesHandlerImpl implements CoursesHandler{
 	private static final long REFRESH_COURSES_TIME = 1000 * 60 * 10;//10 minutes
@@ -29,7 +28,9 @@ public class CoursesHandlerImpl implements CoursesHandler{
 		if (courses == null || lastUpdate + REFRESH_COURSES_TIME < System.currentTimeMillis()){
 			lastUpdate = System.currentTimeMillis();
 			try {
+				logger.debug("About to load courses from db");
 				loadFromDB();
+				logger.debug("Loaded courses from db");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

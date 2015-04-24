@@ -51,7 +51,7 @@
 					<h3>CS ${course.NUMBER}</h3>
 					<p>${course.NAME}</p>
 					<p>${course.UNDERGRADHOURS} hours</p>
-					</br>
+					<br/>
 				</div>
 			</c:forEach>
 		</div>
