@@ -6,10 +6,14 @@ $(document).ready(function() {
 	-----------------------------------------------------------------*/
 	
 	$('#external-events .fc-event').each(function() {
-
+		var t = $.trim($(this).text());
+		var bgc = this.style.getPropertyValue ("background-color");
+		var txc = this.style.getPropertyValue ("color");
 		// store data so the calendar knows to render an event upon drop
 		$(this).data('event', {
-			title: $.trim($(this).text()), // use the element's text as the event title
+			title: t, // use the element's text as the event title
+			textColor: txc,
+			backgroundColor: bgc,
 			stick: true, // maintain when user navigates (see docs on the renderEvent method)
 		});
 		

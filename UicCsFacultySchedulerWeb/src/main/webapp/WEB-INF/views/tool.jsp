@@ -39,9 +39,7 @@
 <script
 	src='${pageContext.request.contextPath}/resources/fullcalendar/lib/moment.min.js'
 	type="text/javascript"></script>
-<script
-	src='${pageContext.request.contextPath}/resources/fullcalendar/lib/jquery.min.js'
-	type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script
 	src='${pageContext.request.contextPath}/resources/fullcalendar/lib/jquery-ui.custom.min.js'
 	type="text/javascript"></script>
@@ -80,32 +78,27 @@
 								<c:when test="${course.NUMBER < 200}">
 									<div class='fc-event'
 										style='background-color: ${PRE200_COL_BG}; color: ${PRE200_COL_TX};'
-										data-toggle="tootip" title="${course.NAME}">CS
-										${course.NUMBER}</div>
+										data-toggle="tootip" title="${course.NAME}">CS ${course.NUMBER}</div>
 								</c:when>
 								<c:when test="${course.NUMBER < 300}">
 									<div class='fc-event'
 										style='background-color: ${PRE300_COL_BG}; color: ${PRE300_COL_TX};'
-										data-toggle="tootip" title="${course.NAME}">CS
-										${course.NUMBER}</div>
+										data-toggle="tootip" title="${course.NAME}">CS ${course.NUMBER}</div>
 								</c:when>
 								<c:when test="${course.NUMBER < 400}">
 									<div class='fc-event'
 										style='background-color: ${PRE400_COL_BG}; color: ${PRE400_COL_TX};'
-										data-toggle="tootip" title="${course.NAME}">CS
-										${course.NUMBER}</div>
+										data-toggle="tootip" title="${course.NAME}">CS ${course.NUMBER}</div>
 								</c:when>
 								<c:when test="${course.NUMBER < 500}">
 									<div class='fc-event'
 										style='background-color: ${PRE500_COL_BG}; color: ${PRE500_COL_TX};'
-										data-toggle="tootip" title="${course.NAME}">CS
-										${course.NUMBER}</div>
+										data-toggle="tootip" title="${course.NAME}">CS ${course.NUMBER}</div>
 								</c:when>
 								<c:otherwise>
 									<div class='fc-event'
 										style='background-color: ${DEFAULT_COL_BG}; color: ${DEFAULT_COL_TX};'
-										data-toggle="tootip" title="${course.NAME}">CS
-										${course.NUMBER}</div>
+										data-toggle="tootip" title="${course.NAME}">CS ${course.NUMBER}</div>
 								</c:otherwise>
 							</c:choose>
 						</c:forEach>
@@ -150,6 +143,9 @@
 		src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.min.js"
 		type="text/javascript"></script>
 	<script>
+	$(document).ready(function() {
+		  $('.schedMenuItem').addClass('active');
+		});
 	
 	</script>
 

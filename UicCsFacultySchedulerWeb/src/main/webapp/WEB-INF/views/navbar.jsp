@@ -18,7 +18,7 @@
 		</a>
 		</div>
 		<ul class="nav navbar-nav">
-            <li><a href="${pageContext.request.contextPath}/tool">Schedule Classes</a></li>
+            <li class="schedMenuItem"><a href="${pageContext.request.contextPath}/tool">Schedule Classes</a></li>
 			<li class="facultyMenuItem"><a href="${pageContext.request.contextPath}/faculty">Faculty</a></li>
 			<li class="coursesMenuItem"><a href="${pageContext.request.contextPath}/courses">Courses</a></li>
 			<li class="aboutMenuItem"><a href="${pageContext.request.contextPath}/about">About</a></li>
