@@ -91,10 +91,6 @@
 		
 	<input type="hidden" id="DEFAULT_EVENT_LENGTH"
 		value="${DEFAULT_EVENT_LENGTH}">
-	<input type="hidden" id="DEFAULT_EVENT_LENGTH"
-		value="${DEFAULT_EVENT_LENGTH}">
-	<input type="hidden" id="DEFAULT_EVENT_LENGTH"
-		value="${DEFAULT_EVENT_LENGTH}">
 
 	<div class="container">
 		<h1>Scheduling Tool</h1>
@@ -199,11 +195,22 @@
 		  $('.schedMenuItem').addClass('active');
 		  $("#contextMenu").hide();
 		});
+
+		function removeEvent(){
+        	if (confirm ("Are you sure you want to remove this course?")){
+        		$('#calendar').fullCalendar('removeEvents', contextMenuEvent._id );
+        		var isoStringS = contextMenuEvent.start.toISOString();
+        		var isoStringE = contextMenuEvent.end.toISOString();
+    			$.post("/schedapp/CalendarRemoveServlet",
+    					{
+    						startTime: isoStringS,
+    						endTime: isoStringE,
+    						title: contextMenuEvent.title,
+    					}
+    			);
+	    	}
+		};
 	
-	function removeEvent(){
-		var eventObj = $(this).data('event');
-		alert(this);
-	}
 	
 	</script>
 

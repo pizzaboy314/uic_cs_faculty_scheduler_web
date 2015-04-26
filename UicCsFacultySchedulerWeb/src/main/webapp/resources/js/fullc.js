@@ -1,5 +1,7 @@
 // FUllC.js
 
+var contextMenuEvent = null;
+
 $(document).ready(function() {
 	
 	/* initialize the external events
@@ -95,6 +97,7 @@ $(document).ready(function() {
             $("body").append(contextMenu);
     		element.bind("contextmenu", "table tr", function(e) {
     			$("#cnum").html("Course: ".concat(event.title));
+    			contextMenuEvent = event;
     		   $contextMenu.css({
     		      display: "inline",
     		      left: e.pageX,
