@@ -155,7 +155,7 @@
 				<!-- The Drag/Drop Box -->
 				<td>
 				<td>
-					<button id='drop-remove' type="button" class="btn btn-default btn-lg"
+					<button id='drop-remove' type="button" onclick="removeAll()" class="btn btn-default btn-lg"
 						style="text-align: center; color: white; background-color: #428bca; font-size: 1.2em;">Clear</button>
 						
 					<button id='undo-opt' type="button" class="btn btn-default btn-lg"
@@ -192,25 +192,42 @@
 		type="text/javascript"></script>
 	<script>
 	$(document).ready(function() {
-		  $('.schedMenuItem').addClass('active');
-		  $("#contextMenu").hide();
-		});
+		$('.schedMenuItem').addClass('active');
+		$("#contextMenu").hide();
+	});
 
-		function removeEvent(){
-        	if (confirm ("Are you sure you want to remove this course?")){
-        		$('#calendar').fullCalendar('removeEvents', contextMenuEvent._id );
-        		var isoStringS = contextMenuEvent.start.toISOString();
-        		var isoStringE = contextMenuEvent.end.toISOString();
-    			$.post("/schedapp/CalendarRemoveServlet",
-    					{
-    						startTime: isoStringS,
-    						endTime: isoStringE,
-    						title: contextMenuEvent.title,
-    					}
-    			);
-	    	}
-		};
+	function removeEvent(){
+       	if (confirm ("Are you sure you want to remove this course?")){
+       		$('#calendar').fullCalendar('removeEvents', contextMenuEvent._id );
+       		var isoStringS = contextMenuEvent.start.toISOString();
+       		var isoStringE = contextMenuEvent.end.toISOString();
+   			$.post("/schedapp/CalendarRemoveServlet",
+   					{
+   						startTime: isoStringS,
+   						endTime: isoStringE,
+   						title: contextMenuEvent.title,
+   					}
+   			);
+    	}
+	};
 	
+
+	function removeAll(){
+		$('#calendar').fullCalendar('removeEvents',
+			function (event){
+	       		var isoStringS = event.start.toISOString();
+	       		var isoStringE = event.end.toISOString();
+	   			$.post("/schedapp/CalendarRemoveServlet",
+	   					{
+	   						startTime: isoStringS,
+	   						endTime: isoStringE,
+	   						title: event.title,
+	   					}
+	   			);
+				return true;
+			}
+		);
+	}
 	
 	</script>
 
