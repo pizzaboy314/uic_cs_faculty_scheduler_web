@@ -48,6 +48,37 @@
 	type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/js/fullc.js"
 	type="text/javascript"></script>
+	
+	
+<style type="text/css">
+	div.calendar-trash{
+		float: left;
+		padding-right: 8px;
+		margin-right:5px;
+		padding-left:8px;
+		padding-top: 3px;
+		cursor: pointer;
+		color: red;
+	}
+
+	.to-trash{
+  	background-color:red;
+    -webkit-border-radius: 5em;
+    border-radius: 5em;
+	}
+	
+	#contextMenu {
+  		position: absolute;
+  		display:block;
+  		float: left;
+		width: 150px;
+		padding: 0 10px;
+		border: 1px solid #fffff;
+		
+		text-align: left;
+		z-index:10001;
+	}
+</style>
 </head>
 
 <body>
@@ -102,6 +133,19 @@
 								</c:otherwise>
 							</c:choose>
 						</c:forEach>
+						<div id="contextMenu" class="dropdown-toggle">
+							<ul class="dropdown-menu" role="menu"
+								aria-labelledby="dropdownMenuDivider"
+								style="display: table; position: static; margin-bottom: 5px;">
+								<li><a href="#">Course Info</a></li>
+								<li class="divider"></li>
+								<li><a href="#">CS ${course.NUMBER}</a></li>
+								<li><a href="#">Name:</a></li>
+								<li><a href="#">Hours:</a></li>
+								<li><a href="#">Edit</a></li>
+							</ul>
+						</div>
+					</div>
 					</div>
 				</td>
 				<!-- The Drag/Drop Box -->
