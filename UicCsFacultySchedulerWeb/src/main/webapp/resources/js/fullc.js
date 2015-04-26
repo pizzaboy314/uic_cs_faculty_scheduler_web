@@ -69,29 +69,47 @@ $(document).ready(function() {
 	    },
 	    // Delete/Remove from calendar
 	    eventRender: function (event, element) {
-	        element.bind('mousedown', function (e) {
+	        /*element.bind('mousedown', function (e) {
 	            if (e.which == 3) {// Right click
 	            	if (confirm ("Are you sure you want to remove this course?")){
 	            		$('#calendar').fullCalendar('removeEvents', event._id );
-	            		var isoString = event.start.toISOString();
+	            		var isoStringS = event.start.toISOString();
+	            		var isoStringE = event.end.toISOString();
 	        			$.post("/schedapp/CalendarRemoveServlet",
 	        					{
-	        						startTime: isoString,
+	        						startTime: isoStringS,
+	        						endTime: isoStringE,
 	        						title: event.title,
 	        					}
 	        			);
 	    	    	}
 	            }
-	        });
+	        });*/
 	        
-	        element.append( "<button id='drop-remove'>X</button>" );
+//	        element.append( "<button id='drop-remove'>X</button>" );
             element.find('#drop-remove').click(function() {
                $('#calendar').fullCalendar('removeEvents');
             });
             
-            element.append( "<button id='undo-opt'>X</button>" );
-            element.find('#undo-opt').click(function() {
-               $('#calendar').fullCalendar('refetchEvents', event._id);
+            var $contextMenu = $("#contextMenu");
+            $("body").append(contextMenu);
+    		element.bind("contextmenu", "table tr", function(e) {
+    			$("#cnum").html("Course: ".concat(event.title));
+    		   $contextMenu.css({
+    		      display: "inline",
+    		      left: e.pageX,
+    		      top: e.pageY
+    		    });
+    		    return false;
+    		  });
+    		  
+    		  $contextMenu.on("click", element, function() {
+    		     $contextMenu.hide();
+    		  });
+    		  
+//	        element.append( "<button id='drop-remove'>X</button>" );
+            element.find('#drop-remove').click(function() {
+               $('#calendar').fullCalendar('removeEvents');
             });
 	    },
 	    //Ignore
@@ -125,9 +143,9 @@ $(document).ready(function() {
 		         color: event.color
 		     };
 		     // Render new event with new event object
-		     $('#calendar').fullCalendar('renderEvent', eventClone);
+		     //$('#calendar').fullCalendar('renderEvent', eventClone);
 		     // Revert the changes in parent event. To move it back to original position
-		     revertFunc();
+		     //revertFunc();
 		},
 		defaultView: 'agendaWeek',
 		defaultDate: '2015-02-12',

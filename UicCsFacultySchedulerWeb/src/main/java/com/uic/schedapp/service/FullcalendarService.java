@@ -97,7 +97,8 @@ public class FullcalendarService {
 		logger.debug("In Calendar remove servlet post");
 		//Example from https://raw.githubusercontent.com/arshaw/fullcalendar/v2.1.1/demos/external-dragging.html
 		String courseTitle = request.getParameter("title"),
-				start = request.getParameter("startTime");
+				start = request.getParameter("startTime"),
+				endTime = request.getParameter("endTime");
 		logger.debug("Course Recieved: " + courseTitle);
 		logger.debug("Start Time Recieved: " + start);
 		SqlSession s = sf.openSession();
@@ -105,7 +106,7 @@ public class FullcalendarService {
 		
 		try {
 			//TODO Section number should be used, once in the UI
-			SectionModelExample sme = getRemovingSME(courseTitle, null, start);
+			SectionModelExample sme = getRemovingSME(courseTitle, null, start, endTime);
 			smMapper.deleteByExample(sme);
 		} catch (ParseException e1) {
 			e1.printStackTrace();
@@ -161,15 +162,16 @@ public class FullcalendarService {
 		s.close();
 	}
 	
-	private SectionModelExample getRemovingSME(String courseTitle, Integer sectionNum, String startTime) throws ParseException{
+	private SectionModelExample getRemovingSME(String courseTitle, Integer sectionNum, String startTime, String endTime) throws ParseException{
 		SectionModelExample sme = new SectionModelExample();
 		Date javaStartTime = fullcFomat.parse(startTime);
 		Date deltaDate = deltaFormat.parse(FullcalendarConstants.DEFAULT_EVENT_LENGTH);
 		long jTime = javaStartTime.getTime(), dTime = deltaDate.getTime();
-		Date endTime = new Date(jTime + dTime);
-		sme.createCriteria().andCourseNumberEqualTo(Integer.parseInt(courseTitle.substring(3)));
-//		sme.createCriteria().andSectionNumberEqualTo(sectionNum);//TODO uncomment when using section number
-		sme.createCriteria().andStartTimeEqualTo(startTime);
+		sme.createCriteria().andCourseNumberEqualTo(Integer.parseInt(courseTitle.substring(3)))
+			.andStopTimeEqualTo(endTime)
+			.andStartTimeEqualTo(startTime)
+//			.andSectionNumberEqualTo(sectionNum)//TODO uncomment when using section number
+			;
 		return sme;
 	}
 	

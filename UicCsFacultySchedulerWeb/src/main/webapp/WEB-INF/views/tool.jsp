@@ -48,6 +48,37 @@
 	type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/js/fullc.js"
 	type="text/javascript"></script>
+	
+	
+<style type="text/css">
+	div.calendar-trash{
+		float: left;
+		padding-right: 8px;
+		margin-right:5px;
+		padding-left:8px;
+		padding-top: 3px;
+		cursor: pointer;
+		color: red;
+	}
+
+	.to-trash{
+  	background-color:red;
+    -webkit-border-radius: 5em;
+    border-radius: 5em;
+	}
+	
+	#contextMenu {
+  		position: absolute;
+  		display:block;
+  		float: left;
+		width: 150px;
+		padding: 0 10px;
+		border: 1px solid #fffff;
+		
+		text-align: left;
+		z-index:10001;
+	}
+</style>
 </head>
 
 <body>
@@ -55,6 +86,13 @@
 	<nav class="navbar navbar-default navbar-static-top">
 		<jsp:include page="navbar.jsp" />
 	</nav>
+	<input type="hidden" id="DEFAULT_EVENT_LENGTH"
+		value="${DEFAULT_EVENT_LENGTH}">
+		
+	<input type="hidden" id="DEFAULT_EVENT_LENGTH"
+		value="${DEFAULT_EVENT_LENGTH}">
+	<input type="hidden" id="DEFAULT_EVENT_LENGTH"
+		value="${DEFAULT_EVENT_LENGTH}">
 	<input type="hidden" id="DEFAULT_EVENT_LENGTH"
 		value="${DEFAULT_EVENT_LENGTH}">
 
@@ -102,6 +140,20 @@
 								</c:otherwise>
 							</c:choose>
 						</c:forEach>
+						<div id="contextMenu" class="dropdown-toggle">
+							<ul class="dropdown-menu" role="menu"
+								aria-labelledby="dropdownMenuDivider"
+								style="display: table; position: static; margin-bottom: 5px;">
+								<li><div style="margin-left: 10px"><strong>Course Info:</strong></div></li>
+<!-- 								<li class="divider"></li> -->
+								<li><div id="cnum" style="margin-left: 20px" ></div></li>
+								<li><div style="margin-left: 20px">Name:</div></li>
+								<li><div style="margin-left: 20px">Hours:</div></li>
+								<li class="divider"></li>
+								<li><a href="#">Edit</a></li>
+								<li><a href="javascript: removeEvent()">Remove</a></li>
+							</ul>
+						</div>
 					</div>
 				</td>
 				<!-- The Drag/Drop Box -->
@@ -145,7 +197,13 @@
 	<script>
 	$(document).ready(function() {
 		  $('.schedMenuItem').addClass('active');
+		  $("#contextMenu").hide();
 		});
+	
+	function removeEvent(){
+		var eventObj = $(this).data('event');
+		alert(this);
+	}
 	
 	</script>
 
