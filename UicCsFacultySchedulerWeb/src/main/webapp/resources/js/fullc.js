@@ -73,6 +73,13 @@ $(document).ready(function() {
 	            if (e.which == 3) {// Right click
 	            	if (confirm ("Are you sure you want to remove this course?")){
 	            		$('#calendar').fullCalendar('removeEvents', event._id );
+	            		var isoString = event.start.toISOString();
+	        			$.post("/schedapp/CalendarRemoveServlet",
+	        					{
+	        						startTime: isoString,
+	        						title: event.title,
+	        					}
+	        			);
 	    	    	}
 	            }
 	        });
@@ -100,7 +107,7 @@ $(document).ready(function() {
 			var eventObj = $(this).data('event');
 			var copiedEventObject = $.extend({}, eventObj);
 			var dateISO = date.toISOString();
-			$.post("/schedapp/CalendarJsonServlet",
+			$.post("/schedapp/CalendarDropServlet",
 			{
 				startTime: dateISO,
 				title: copiedEventObject.title,
@@ -131,7 +138,7 @@ $(document).ready(function() {
 		editable: true,
 		droppable: true, // this allows things to be dropped onto the calendar
 		eventLimit: true, // allow "more" link when too many events
-		events : "/schedapp/CalendarJsonServlet"
+		events : "/schedapp/CalendarRetrieveStored"
 		});
 
 	});

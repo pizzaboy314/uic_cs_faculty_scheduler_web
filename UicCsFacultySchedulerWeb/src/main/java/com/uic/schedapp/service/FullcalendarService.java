@@ -2,6 +2,7 @@ package com.uic.schedapp.service;
 
 import generated.mybatis.dao.SectionModelMapper;
 import generated.mybatis.model.SectionModel;
+import generated.mybatis.model.SectionModelExample;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,7 +10,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.TimeZone;
 
@@ -46,8 +46,9 @@ public class FullcalendarService {
 	@Autowired
 	private SqlSessionFactory sf;
 
-	@RequestMapping(value = "/CalendarJsonServlet", method = RequestMethod.GET)
-	public void handleRequest(HttpServletRequest request, HttpServletResponse response){
+	@RequestMapping(value = "/CalendarRetrieveStored", method = RequestMethod.GET)
+	public void handleDataRetrieval(HttpServletRequest request, HttpServletResponse response){
+		logger.debug("In Calendar retrieval servlet get");
 		List<CalendarDTO> l = new ArrayList<CalendarDTO>();
 		//This needs to change
 		logger.debug("Adding DTO's in GET...");
@@ -64,34 +65,20 @@ public class FullcalendarService {
 			e.printStackTrace();
 		}
 	}
-	@RequestMapping(value = "/CalendarJsonServlet", method = RequestMethod.POST)
-	public void handlePost(HttpServletRequest request, HttpServletResponse response){
-		logger.debug("In Calendar servlet post");
+	
+	@RequestMapping(value = "/CalendarDropServlet", method = RequestMethod.POST)
+	public void handleDrop(HttpServletRequest request, HttpServletResponse response){
+		logger.debug("In Calendar drop servlet post");
 		//Example from https://raw.githubusercontent.com/arshaw/fullcalendar/v2.1.1/demos/external-dragging.html
 		String courseTitle = request.getParameter("title"),
 				start = request.getParameter("startTime");
-		@SuppressWarnings("rawtypes")
-		Enumeration e = request.getParameterNames();
-		for (Object o = e.nextElement(); e.hasMoreElements(); o = e.nextElement()){
-			System.out.println(o.toString());
-		}
 		logger.debug("Course Recieved: " + courseTitle);
 		logger.debug("Start Time Recieved: " + start);
 		SqlSession s = sf.openSession();
 		SectionModelMapper smMapper = s.getMapper(SectionModelMapper.class);
 		
 		try {
-			Date javaStartTime = fullcFomat.parse(start);
-			Date deltaDate = deltaFormat.parse(FullcalendarConstants.DEFAULT_EVENT_LENGTH);
-			long jTime = javaStartTime.getTime(), dTime = deltaDate.getTime();
-			Date endTime = new Date(jTime + dTime);
-			SectionModel sm = new SectionModel();
-			logger.debug("start time: " + fullcFomat.format(javaStartTime));
-			logger.debug("end time: " + fullcFomat.format(endTime));
-			sm.setCourseNumber(Integer.parseInt(courseTitle.substring(3)));
-			sm.setStartTime(start);
-			sm.setStopTime(fullcFomat.format(endTime));
-			sm.setSectionNumber((int)(Math.random() * 200));
+			SectionModel sm = getNewSectionModel(courseTitle, start);
 			smMapper.insert(sm);
 			
 		} catch (ParseException e1) {
@@ -104,6 +91,38 @@ public class FullcalendarService {
 		
 	}
 	
+
+	@RequestMapping(value = "/CalendarRemoveServlet", method = RequestMethod.POST)
+	public void handleRemove(HttpServletRequest request, HttpServletResponse response){
+		logger.debug("In Calendar remove servlet post");
+		//Example from https://raw.githubusercontent.com/arshaw/fullcalendar/v2.1.1/demos/external-dragging.html
+		String courseTitle = request.getParameter("title"),
+				start = request.getParameter("startTime");
+		logger.debug("Course Recieved: " + courseTitle);
+		logger.debug("Start Time Recieved: " + start);
+		SqlSession s = sf.openSession();
+		SectionModelMapper smMapper = s.getMapper(SectionModelMapper.class);
+		
+		try {
+			//TODO Section number should be used, once in the UI
+			SectionModelExample sme = getRemovingSME(courseTitle, null, start);
+			smMapper.deleteByExample(sme);
+		} catch (ParseException e1) {
+			e1.printStackTrace();
+		} catch (NumberFormatException e1){
+			e1.printStackTrace();
+		} finally {
+			s.close();
+		}
+		
+	}
+	
+	/**
+	 * Adds the color attributes to the response object
+	 * 
+	 * @param d Response object
+	 * @param num Course number
+	 */
 	private static void setColors(CalendarDTO d, int num){
 		if (num < 200){
 			d.setBackgroundColor(FullcalendarConstants.PRE200_COL_BG);
@@ -128,9 +147,11 @@ public class FullcalendarService {
 		SqlSession s = sf.openSession();
 		SectionModelMapper scMapper = s.getMapper(SectionModelMapper.class);
 		List<SectionModel> res = scMapper.selectByExample(null);
+		int i = 0;
 		for (SectionModel r: res){
 			c = new CalendarDTO();
 			int cNum = r.getCourseNumber();
+			c.setId(i++);
 			c.setTitle("CS " + cNum);
 			c.setStart(r.getStartTime());
 			c.setEnd(r.getStopTime());
@@ -138,6 +159,36 @@ public class FullcalendarService {
 			l.add(c);
 		}
 		s.close();
+	}
+	
+	private SectionModelExample getRemovingSME(String courseTitle, Integer sectionNum, String startTime) throws ParseException{
+		SectionModelExample sme = new SectionModelExample();
+		Date javaStartTime = fullcFomat.parse(startTime);
+		Date deltaDate = deltaFormat.parse(FullcalendarConstants.DEFAULT_EVENT_LENGTH);
+		long jTime = javaStartTime.getTime(), dTime = deltaDate.getTime();
+		Date endTime = new Date(jTime + dTime);
+		sme.createCriteria().andCourseNumberEqualTo(Integer.parseInt(courseTitle.substring(3)));
+//		sme.createCriteria().andSectionNumberEqualTo(sectionNum);//TODO uncomment when using section number
+		sme.createCriteria().andStartTimeEqualTo(startTime);
+		return sme;
+	}
+	
+	private SectionModel getNewSectionModel(String courseTitle, String startTime) throws ParseException{
+		SectionModel sm = new SectionModel();
+		
+		Date javaStartTime = fullcFomat.parse(startTime);
+		Date deltaDate = deltaFormat.parse(FullcalendarConstants.DEFAULT_EVENT_LENGTH);
+		long jTime = javaStartTime.getTime(), dTime = deltaDate.getTime();
+		Date endTime = new Date(jTime + dTime);
+		
+		sm.setCourseNumber(Integer.parseInt(courseTitle.substring(3)));
+		sm.setStartTime(startTime);
+		sm.setStopTime(fullcFomat.format(endTime));
+		
+		//TODO get this value from the UI
+		sm.setSectionNumber((int)(Math.random() * 2000));
+		
+		return sm;
 	}
 		 
 
