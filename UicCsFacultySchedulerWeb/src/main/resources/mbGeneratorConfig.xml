@@ -34,6 +34,7 @@
 		</table>
 		<table schema="test" tableName="${datasource.tablename.sections}" domainObjectName="${datasource.java.classname.sections}" >
 			<property name="useActualColumnNames" value="true"/>
+<!-- 			<generatedKey column="SectionNumber" sqlStatement="MySql"/> -->
 		</table>
 
 	</context>
