@@ -1,8 +1,7 @@
 // FUllC.js
 
 var contextMenuEvent = null;
-
-
+var changingEvent = null;
 
 function removeEvent(){
    	if (confirm ("Are you sure you want to remove this course?")){
@@ -37,6 +36,13 @@ function removeAll(){
 	);
 }
 
+$(document).click(function(event) { 
+    if(!$(event.target).closest('#contextMenu').length) {
+        if($('#contextMenu').is(":visible")) {
+            $('#contextMenu').hide()
+        }
+    }        
+});
 
 $(document).ready(function() {
 	
@@ -83,6 +89,35 @@ $(document).ready(function() {
 		},
 		defaultTimedEventDuration: document.getElementById("DEFAULT_EVENT_LENGTH").value,
 	    forceEventDuration: true,
+	    eventDragStop: function(event, jsEvent, ui, view){
+	    	changingEvent = $.extend(true, {}, event);
+	    },
+	    eventDrop: function(event, delta, revertFunc, jsEvent, ui, view){
+			$.post("/schedapp/CalendarUpdateServlet",
+			{
+				title: changingEvent.title,
+				oldStartTime: changingEvent.start.toISOString(),
+				oldEndTime: changingEvent.end.toISOString(),
+				newStartTime: event.start.toISOString(),
+				newEndTime: event.end.toISOString(),
+			});
+	    	
+	    },
+	    eventResizeStop: function(event, jsEvent, ui, view){
+	    	changingEvent = $.extend(true, {}, event);
+	    },
+	    eventResize: function(event, delta, revertFunc, jsEvent, ui, view){
+			$.post("/schedapp/CalendarUpdateServlet",
+			{
+				title: changingEvent.title,
+				oldStartTime: changingEvent.start.toISOString(),
+				oldEndTime: changingEvent.end.toISOString(),
+				newStartTime: event.start.toISOString(),
+				newEndTime: event.end.toISOString(),
+			});
+	    	
+	    },
+	    	
 		// Tootltip/Popout for event info
 		eventMouseover: function(calEvent, jsEvent) {
 		    var tooltip = '<div class="tooltipevent" style="width:200px;height:100px;background:#3A87AD;position:absolute;z-index:10001;color:#FFF;text-align:left;">' + calEvent.title + '</div>';
@@ -107,24 +142,6 @@ $(document).ready(function() {
 	    },
 	    // Delete/Remove from calendar
 	    eventRender: function (event, element) {
-	        /*element.bind('mousedown', function (e) {
-	            if (e.which == 3) {// Right click
-	            	if (confirm ("Are you sure you want to remove this course?")){
-	            		$('#calendar').fullCalendar('removeEvents', event._id );
-	            		var isoStringS = event.start.toISOString();
-	            		var isoStringE = event.end.toISOString();
-	        			$.post("/schedapp/CalendarRemoveServlet",
-	        					{
-	        						startTime: isoStringS,
-	        						endTime: isoStringE,
-	        						title: event.title,
-	        					}
-	        			);
-	    	    	}
-	            }
-	        });*/
-	        
-//	        element.append( "<button id='drop-remove'>X</button>" );
             element.find('#drop-remove').click(function() {
                $('#calendar').fullCalendar('removeEvents');
             });
@@ -146,7 +163,6 @@ $(document).ready(function() {
     		     $contextMenu.hide();
     		  });
     		  
-//	        element.append( "<button id='drop-remove'>X</button>" );
             element.find('#drop-remove').click(function() {
                $('#calendar').fullCalendar('removeEvents');
             });

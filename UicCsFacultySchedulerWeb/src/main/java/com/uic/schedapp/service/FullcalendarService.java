@@ -91,6 +91,33 @@ public class FullcalendarService {
 		
 	}
 	
+	@RequestMapping(value = "/CalendarUpdateServlet", method = RequestMethod.POST)
+	public void handleUpdate(HttpServletRequest request, HttpServletResponse response){
+		logger.debug("In Calendar update servlet post");
+		SqlSession s = sf.openSession();
+		SectionModelMapper smMapper = s.getMapper(SectionModelMapper.class);
+		String courseTitle = request.getParameter("title"),
+				oldStart = request.getParameter("oldStartTime"),
+				oldEndTime = request.getParameter("oldEndTime"),
+				start = request.getParameter("newStartTime"),
+				endTime = request.getParameter("newEndTime");
+		try {
+			SectionModelExample sme = getRemovingSME(courseTitle, null, oldStart, oldEndTime);
+			List<SectionModel> l = smMapper.selectByExample(sme);
+			SectionModel sm = l.get(0);
+			logger.debug(oldStart + "<>" + oldEndTime);
+			logger.debug(start + "<>" + endTime);
+			sm.setStartTime(start);
+			sm.setStopTime(endTime);
+			smMapper.updateByExample(sm, sme);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		} finally {
+			s.close();
+		}
+//		logger.debug(courseTitle + "|" + oldStart + "|" + oldEndTime + "|" + start + "|" + endTime);
+		
+	}
 
 	@RequestMapping(value = "/CalendarRemoveServlet", method = RequestMethod.POST)
 	public void handleRemove(HttpServletRequest request, HttpServletResponse response){
@@ -164,9 +191,6 @@ public class FullcalendarService {
 	
 	private SectionModelExample getRemovingSME(String courseTitle, Integer sectionNum, String startTime, String endTime) throws ParseException{
 		SectionModelExample sme = new SectionModelExample();
-		Date javaStartTime = fullcFomat.parse(startTime);
-		Date deltaDate = deltaFormat.parse(FullcalendarConstants.DEFAULT_EVENT_LENGTH);
-		long jTime = javaStartTime.getTime(), dTime = deltaDate.getTime();
 		sme.createCriteria().andCourseNumberEqualTo(Integer.parseInt(courseTitle.substring(3)))
 			.andStopTimeEqualTo(endTime)
 			.andStartTimeEqualTo(startTime)
@@ -188,7 +212,7 @@ public class FullcalendarService {
 		sm.setStopTime(fullcFomat.format(endTime));
 		
 		//TODO get this value from the UI
-		sm.setSectionNumber((int)(Math.random() * 2000));
+		sm.setSectionNumber(new java.util.Random().nextInt(1000));
 		
 		return sm;
 	}
