@@ -195,40 +195,6 @@
 		$('.schedMenuItem').addClass('active');
 		$("#contextMenu").hide();
 	});
-
-	function removeEvent(){
-       	if (confirm ("Are you sure you want to remove this course?")){
-       		$('#calendar').fullCalendar('removeEvents', contextMenuEvent._id );
-       		var isoStringS = contextMenuEvent.start.toISOString();
-       		var isoStringE = contextMenuEvent.end.toISOString();
-   			$.post("/schedapp/CalendarRemoveServlet",
-   					{
-   						startTime: isoStringS,
-   						endTime: isoStringE,
-   						title: contextMenuEvent.title,
-   					}
-   			);
-    	}
-	};
-	
-
-	function removeAll(){
-		$('#calendar').fullCalendar('removeEvents',
-			function (event){
-	       		var isoStringS = event.start.toISOString();
-	       		var isoStringE = event.end.toISOString();
-	   			$.post("/schedapp/CalendarRemoveServlet",
-	   					{
-	   						startTime: isoStringS,
-	   						endTime: isoStringE,
-	   						title: event.title,
-	   					}
-	   			);
-				return true;
-			}
-		);
-	}
-	
 	</script>
 
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
