@@ -118,24 +118,24 @@ $(document).ready(function() {
 	    	
 	    },
 	    	
-		// Tootltip/Popout for event info
-		eventMouseover: function(calEvent, jsEvent) {
-		    var tooltip = '<div class="tooltipevent" style="width:200px;height:100px;background:#3A87AD;position:absolute;z-index:10001;color:#FFF;text-align:left;">' + calEvent.title + '</div>';
-		    $("body").append(tooltip);
-		    $(this).mouseover(function(e) {
-		        $(this).css('z-index', 10000);
-		        $('.tooltipevent').fadeIn('500');
-		        $('.tooltipevent').fadeTo('10', 1.9);
-		    }).mousemove(function(e) {
-		        $('.tooltipevent').css('top', e.pageY + 10);
-		        $('.tooltipevent').css('left', e.pageX + 20);
-		    });
-		},
-		// Hides tooltip
-		eventMouseout: function(calEvent, jsEvent) {
-		    $(this).css('z-index', 8);
-		    $('.tooltipevent').remove();
-		},
+//		// Tooltip/Popout for event info
+//		eventMouseover: function(calEvent, jsEvent) {
+//		    var tooltip = '<div class="tooltipevent" style="width:200px;height:100px;background:#3A87AD;position:absolute;z-index:10001;color:#FFF;text-align:left;">' + calEvent.title + '</div>';
+//		    $("body").append(tooltip);
+//		    $(this).mouseover(function(e) {
+//		        $(this).css('z-index', 10000);
+//		        $('.tooltipevent').fadeIn('500');
+//		        $('.tooltipevent').fadeTo('10', 1.9);
+//		    }).mousemove(function(e) {
+//		        $('.tooltipevent').css('top', e.pageY + 10);
+//		        $('.tooltipevent').css('left', e.pageX + 20);
+//		    });
+//		},
+//		// Hides tooltip
+//		eventMouseout: function(calEvent, jsEvent) {
+//		    $(this).css('z-index', 8);
+//		    $('.tooltipevent').remove();
+//		},
 		// Ignore
 	    removeEvents: function(event){
 	    	removeFunc();
