@@ -66,7 +66,7 @@ public class FullcalendarService {
 		}
 	}
 	
-	@RequestMapping(value = "/CalendarDropServlet", method = RequestMethod.POST)
+	@RequestMapping(value = "/CalendarDropServlet", method = {RequestMethod.POST, RequestMethod.GET})
 	public void handleDrop(HttpServletRequest request, HttpServletResponse response){
 		logger.debug("In Calendar drop servlet post");
 		//Example from https://raw.githubusercontent.com/arshaw/fullcalendar/v2.1.1/demos/external-dragging.html
@@ -86,6 +86,22 @@ public class FullcalendarService {
 		} catch (NumberFormatException e1){
 			e1.printStackTrace();
 		} finally {
+
+			List<CalendarDTO> l = new ArrayList<CalendarDTO>();
+			//This needs to change
+			logger.debug("Adding DTO's in GET...");
+			addDTOs(l);
+
+			response.setContentType("application/json");
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter out;
+			try {
+				out = response.getWriter();
+				logger.debug("Writing out DTO's in GET reponse...");
+				out.write(new Gson().toJson(l));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			s.close();
 		}
 		
