@@ -155,20 +155,21 @@
 				<!-- The Drag/Drop Box -->
 				<td>
 				<td>
-					<button id='drop-remove' type="button" onclick="removeAll()" class="btn btn-default btn-lg"
-						style="text-align: center; color: white; background-color: #428bca; font-size: 1.2em;">Clear</button>
-						
-					<button id='undo-opt' type="button" class="btn btn-default btn-lg"
-						style="text-align: center; color: white; background-color: #d9534f; font-size: 1.2em;">Undo</button>
-						
-					<button type="button" class="btn btn-default btn-lg"
-						style="text-align: center; color: white; background-color: #f0ad4e; font-size: 1.2em;">Redo</button>
-						
 					<div id='calendar'></div> <!-- embed src="fullcalendar/demos/external-dragging.html" -->
 					<!-- -->
 				</td>
 				<!-- Tools -->
 				<td>
+					<button id='drop-remove' type="button" onclick="removeAll()" class="btn btn-group-justified"
+						style="text-align: center; color: white; background-color: #428bca; font-size: 1.2em;">Clear Schedule</button>
+					<!-- 
+					<button id='undo-opt' type="button" class="btn btn-default btn-lg"
+						style="text-align: center; color: white; background-color: #d9534f; font-size: 1.2em;">Undo</button>
+						
+					<button type="button" class="btn btn-default btn-lg"
+						style="text-align: center; color: white; background-color: #f0ad4e; font-size: 1.2em;">Redo</button>
+					-->	
+					<p></p>
 					<div id='external-events'
 						style="height: 200px; background-color: #eee">
 						<h4 style="text-align: center;">Instructions</h4>
