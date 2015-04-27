@@ -3,12 +3,22 @@
 var contextMenuEvent = null;
 var changingEvent = null;
 
-var springButtonString = "Switch to Fall...";
-var fallButtonString = "Switch to Fall...";
-var semester = "Spring";
+var curSemester = "Spring";
+
+var springStart = "2015-02-09";
+var fallStart = "2015-02-23";
 
 function swtichSemester(){
-	alert("SSIADNAS");
+	var sem = "Spring";
+	if (curSemester === "Spring")
+		sem = "Fall";
+   	if (confirm ("Are you sure you want to go to ".concat(sem).concat(" semester?"))){
+   		if (sem === "Fall"){
+   			
+   		} else {
+   			
+   		}
+   	}
 }
 
 function removeEvent(){
