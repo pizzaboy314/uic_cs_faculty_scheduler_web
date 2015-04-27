@@ -28,7 +28,7 @@ function removeEvent(){
 
 
 function removeAll(){
-   	if (confirm ("Are you sure you want to remove all course?")){
+   	if (confirm ("Are you sure you want to remove all courses?")){
 		$('#calendar').fullCalendar('removeEvents',
 			function (event){
 	       		var isoStringS = event.start.toISOString();
