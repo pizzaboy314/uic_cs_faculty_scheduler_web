@@ -171,11 +171,16 @@
 				<td>
 					<div id='external-events'
 						style="height: 200px; background-color: #eee">
-						<h4 style="text-align: center;">Trash Can</h4>
-						<p>To remove courses from schedule, drag into this area.</p>
+						<h4 style="text-align: center;">Instructions</h4>
+						<p>Drag courses from the left panel into the calendar.</p>
+						<p>To remove or edit, right click the event.</p>
+						
+						<!--
 						<span class="icon"> <i class="glyphicon glyphicon-trash"
 							style="margin-left: 45px; color: gray; font-size: 2.2em;"></i>
 						</span>
+						-->
+						
 					</div>
 				</td>
 				<!-- Tools -->
