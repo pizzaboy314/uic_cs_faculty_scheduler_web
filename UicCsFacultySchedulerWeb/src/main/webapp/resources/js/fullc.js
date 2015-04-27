@@ -20,20 +20,22 @@ function removeEvent(){
 
 
 function removeAll(){
-	$('#calendar').fullCalendar('removeEvents',
-		function (event){
-       		var isoStringS = event.start.toISOString();
-       		var isoStringE = event.end.toISOString();
-   			$.post("/schedapp/CalendarRemoveServlet",
-   					{
-   						startTime: isoStringS,
-   						endTime: isoStringE,
-   						title: event.title,
-   					}
-   			);
-			return true;
-		}
-	);
+   	if (confirm ("Are you sure you want to remove all course?")){
+		$('#calendar').fullCalendar('removeEvents',
+			function (event){
+	       		var isoStringS = event.start.toISOString();
+	       		var isoStringE = event.end.toISOString();
+	   			$.post("/schedapp/CalendarRemoveServlet",
+	   					{
+	   						startTime: isoStringS,
+	   						endTime: isoStringE,
+	   						title: event.title,
+	   					}
+	   			);
+				return true;
+			}
+		);
+   	}
 }
 
 $(document).click(function(event) { 
