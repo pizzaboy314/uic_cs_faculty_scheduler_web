@@ -96,7 +96,7 @@
 		<h1>Scheduling Tool</h1>
 		<hr>
 		<div style="vertical-align:middle" align="center">
-			<h2 id="semesterTitle" style="vertical-align: middle" align="center">Fall 2015</h2>
+			<h2 id="semesterTitle" style="vertical-align: middle" align="center">Fall</h2>
 		</div>
 		<table style="width: 100%; border: 10px, solid black">
 			<tr>
