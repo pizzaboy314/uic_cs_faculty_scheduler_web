@@ -95,16 +95,9 @@
 	<div class="container">
 		<h1>Scheduling Tool</h1>
 		<hr>
-		<table>
-			<tr>
-				<td>
-					<button id="toggleSemesterButton" type="button" onclick="swtichSemester()">Switch to Fall</button>
-				</td>
-				<td style="vertical-align:middle" align="center">
-					<h2 id="semesterTitle" style="vertical-align:middle" align="center">Spring</h2>
-				</td>
-			</tr>
-		</table>
+		<div style="vertical-align:middle" align="center">
+			<h2 id="semesterTitle" style="vertical-align: middle" align="center">Fall</h2>
+		</div>
 		<table style="width: 100%; border: 10px, solid black">
 			<tr>
 				<!-- The Drag/Drop Box -->
@@ -171,6 +164,11 @@
 				</td>
 				<!-- Tools -->
 				<td>
+					<!--
+					<button id="toggleSemesterButton" type="button" onclick="swtichSemester()" class="btn btn-group-justified"
+						style="text-align: center; color: white; background-color: #428bca; font-size: 1.2em;">Switch Semester</button>
+					-->
+					<p></p>
 					<button id='drop-remove' type="button" onclick="removeAll()" class="btn btn-group-justified"
 						style="text-align: center; color: white; background-color: #428bca; font-size: 1.2em;">Clear Schedule</button>
 					<!-- 
