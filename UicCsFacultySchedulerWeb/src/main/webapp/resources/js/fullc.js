@@ -3,6 +3,14 @@
 var contextMenuEvent = null;
 var changingEvent = null;
 
+var springButtonString = "Switch to Fall...";
+var fallButtonString = "Switch to Fall...";
+var semester = "Spring";
+
+function swtichSemester(){
+	alert("SSIADNAS");
+}
+
 function removeEvent(){
    	if (confirm ("Are you sure you want to remove this course?")){
    		$('#calendar').fullCalendar('removeEvents', contextMenuEvent._id );

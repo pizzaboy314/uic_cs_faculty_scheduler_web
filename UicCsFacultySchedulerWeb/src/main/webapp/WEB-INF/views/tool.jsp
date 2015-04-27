@@ -94,6 +94,17 @@
 
 	<div class="container">
 		<h1>Scheduling Tool</h1>
+		<hr>
+		<table>
+			<tr>
+				<td>
+					<button id="toggleSemesterButton" type="button" onclick="swtichSemester()">Switch to Fall</button>
+				</td>
+				<td style="vertical-align:middle" align="center">
+					<h2 id="semesterTitle" style="vertical-align:middle" align="center">Spring</h2>
+				</td>
+			</tr>
+		</table>
 		<table style="width: 100%; border: 10px, solid black">
 			<tr>
 				<!-- The Drag/Drop Box -->
