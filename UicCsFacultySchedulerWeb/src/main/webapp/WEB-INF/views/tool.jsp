@@ -164,8 +164,10 @@
 				</td>
 				<!-- Tools -->
 				<td>
+					<!--
 					<button id="toggleSemesterButton" type="button" onclick="swtichSemester()" class="btn btn-group-justified"
 						style="text-align: center; color: white; background-color: #428bca; font-size: 1.2em;">Switch Semester</button>
+					-->
 					<p></p>
 					<button id='drop-remove' type="button" onclick="removeAll()" class="btn btn-group-justified"
 						style="text-align: center; color: white; background-color: #428bca; font-size: 1.2em;">Clear Schedule</button>
