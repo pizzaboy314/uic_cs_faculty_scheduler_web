@@ -3,21 +3,24 @@
 var contextMenuEvent = null;
 var changingEvent = null;
 
-var curSemester = "Spring";
-
 var springStart = "2015-02-09";
 var fallStart = "2015-02-23";
 
 function swtichSemester(){
-	var sem = "Spring";
-	if (curSemester === "Spring")
+	var sem = $("#semesterTitle").text();
+	if (sem === "Spring"){
 		sem = "Fall";
+	} else {
+		sem = "Spring";
+	}
+	
    	if (confirm ("Are you sure you want to go to ".concat(sem).concat(" semester?"))){
    		if (sem === "Fall"){
-   			
+   			$('#calendar').fullCalendar('gotoDate', fallStart);
    		} else {
-   			
+   			$('#calendar').fullCalendar('gotoDate', springStart);
    		}
+   		$("#semesterTitle").html(sem);
    	}
 }
 
