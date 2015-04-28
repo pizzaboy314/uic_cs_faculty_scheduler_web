@@ -9,10 +9,12 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.codehaus.plexus.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,6 +27,10 @@ public class CoursesHandlerImpl implements CoursesHandler{
 	private SqlSessionFactory sqlSessionFactory;
 	
 	public List<CourseModel> getAllCourses(){
+		return getCoursesFitered(null);
+	}
+
+	public List<CourseModel> getCoursesFitered(String filterStr){
 		if (courses == null || lastUpdate + REFRESH_COURSES_TIME < System.currentTimeMillis()){
 			lastUpdate = System.currentTimeMillis();
 			try {
@@ -35,7 +41,14 @@ public class CoursesHandlerImpl implements CoursesHandler{
 				e.printStackTrace();
 			}
 		}
-		return courses;
+		List<CourseModel> filteredList = new ArrayList<CourseModel>();
+		for (CourseModel c: courses){
+			if (StringUtils.isEmpty(filterStr) || c.getNAME().contains(filterStr)){
+				filteredList.add(c);
+			}
+		}
+		
+		return filteredList;
 	}
 	
 	public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory){

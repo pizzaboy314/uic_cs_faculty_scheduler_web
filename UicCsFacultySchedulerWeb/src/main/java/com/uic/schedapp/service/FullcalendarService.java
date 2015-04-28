@@ -1,6 +1,7 @@
 package com.uic.schedapp.service;
 
 import generated.mybatis.dao.SectionModelMapper;
+import generated.mybatis.model.CourseModel;
 import generated.mybatis.model.SectionModel;
 import generated.mybatis.model.SectionModelExample;
 
@@ -22,12 +23,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.google.gson.Gson;
 
 import data.CalendarDTO;
+import data.CoursesHandler;
 import data.FullcalendarConstants;
 
 @Controller
@@ -37,6 +40,10 @@ public class FullcalendarService {
 	private static final String DEFAULT_EVENT_LEN_FORMAT = "HH:mm:ss";
 	private static final SimpleDateFormat fullcFomat = new SimpleDateFormat(FC_EVENT_FORMAT);
 	private static final SimpleDateFormat deltaFormat = new SimpleDateFormat(DEFAULT_EVENT_LEN_FORMAT);
+	
+
+	@Autowired
+	private CoursesHandler coursesHandler;
 	
 	static {//static block to set time zone to gmt no matter were its being pulled
 		fullcFomat.setTimeZone(TimeZone.getTimeZone("GMT"));
@@ -158,7 +165,6 @@ public class FullcalendarService {
 		} finally {
 			s.close();
 		}
-		
 	}
 	
 	/**

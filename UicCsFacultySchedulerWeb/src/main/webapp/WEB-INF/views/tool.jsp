@@ -104,7 +104,7 @@
 				<td>
 					<form role="form">
 						<div class="form-group has-feedback" style="width: 200px;">
-							<input type="text" class="form-control" placeholder="Search..." />
+							<input type="text" class="form-control" oninput="filterCourse()" placeholder="Search..." />
 							<i class="form-control-feedback glyphicon glyphicon-search"></i>
 						</div>
 					</form>

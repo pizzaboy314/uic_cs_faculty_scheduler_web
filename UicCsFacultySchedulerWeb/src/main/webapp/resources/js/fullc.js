@@ -6,6 +6,10 @@ var changingEvent = null;
 var springStart = "2015-02-09";
 var fallStart = "2015-02-23";
 
+function filterCourse(){
+	
+}
+
 function swtichSemester(){
 	var sem = $("#semesterTitle").text();
 	if (sem === "Spring"){
@@ -16,6 +20,7 @@ function swtichSemester(){
 	
    	if (confirm ("Are you sure you want to go to ".concat(sem).concat(" semester?"))){
    		if (sem === "Fall"){
+			$('#calendar').fullCalendar('removeEvents');
    			$('#calendar').fullCalendar('gotoDate', fallStart);
    		} else {
    			$('#calendar').fullCalendar('gotoDate', springStart);
@@ -229,6 +234,7 @@ $(document).ready(function() {
 		defaultDate: '2015-02-12',
         minTime: '07:00:00',
         maxTime: '20:00:00',
+        slotDuration: '00:15:00',
         weekends: false,
 		allDaySlot: false,
 		editable: true,
