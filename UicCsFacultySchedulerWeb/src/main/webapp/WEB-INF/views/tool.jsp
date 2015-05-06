@@ -145,12 +145,13 @@
 								aria-labelledby="dropdownMenuDivider"
 								style="display: table; position: static; margin-bottom: 5px;">
 								<li><div style="margin-left: 10px"><strong>Course Info:</strong></div></li>
-<!-- 								<li class="divider"></li> -->
 								<li><div id="cnum" style="margin-left: 20px" ></div></li>
-								<li><div style="margin-left: 20px">Name:</div></li>
-								<li><div style="margin-left: 20px">Hours:</div></li>
+						<!-- 	<li><div style="margin-left: 20px">Name:</div></li>
+								<li><div style="margin-left: 20px">Hours:</div></li>-->
 								<li class="divider"></li>
+								<!--
 								<li><a href="#">Edit</a></li>
+								-->
 								<li><a href="javascript: removeEvent()">Remove</a></li>
 							</ul>
 						</div>
