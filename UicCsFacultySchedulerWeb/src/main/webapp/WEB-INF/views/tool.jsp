@@ -153,12 +153,13 @@
 								aria-labelledby="dropdownMenuDivider"
 								style="display: table; position: static; margin-bottom: 5px;">
 								<li><div style="margin-left: 10px"><strong>Course Info:</strong></div></li>
-<!-- 								<li class="divider"></li> -->
 								<li><div id="cnum" style="margin-left: 20px" ></div></li>
-								<li><div style="margin-left: 20px">Name:</div></li>
-								<li><div style="margin-left: 20px">Hours:</div></li>
+						<!-- 	<li><div style="margin-left: 20px">Name:</div></li>
+								<li><div style="margin-left: 20px">Hours:</div></li>-->
 								<li class="divider"></li>
+								<!--
 								<li><a href="#">Edit</a></li>
+								-->
 								<li><a href="javascript: removeEvent()">Remove</a></li>
 							</ul>
 						</div>
@@ -176,7 +177,7 @@
 						style="text-align: center; color: white; background-color: #428bca; font-size: 1.2em;">Switch Semester</button>
 					<p></p>
 					<button id='drop-remove' type="button" onclick="removeAll()" class="btn btn-group-justified"
-						style="text-align: center; color: white; background-color: #428bca; font-size: 1.2em;">Clear Schedule</button>
+						style="text-align: center; color: white; background-color: #F74A4A; font-size: 1.2em;">Clear Schedule</button>
 					<!-- 
 					<button id='undo-opt' type="button" class="btn btn-default btn-lg"
 						style="text-align: center; color: white; background-color: #d9534f; font-size: 1.2em;">Undo</button>
