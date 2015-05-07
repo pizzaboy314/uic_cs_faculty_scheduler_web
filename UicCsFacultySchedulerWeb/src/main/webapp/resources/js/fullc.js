@@ -54,19 +54,30 @@ function removeEvent(){
 
 
 function removeAll(){
+	var sem = $("#semesterTitle").text();
+	var semTime;
+	if (sem === "Spring"){
+		semTime = springStart;
+	} else {
+		semTime = fallStart;
+	}
    	if (confirm ("Are you sure you want to remove all courses?")){
 		$('#calendar').fullCalendar('removeEvents',
 			function (event){
 	       		var isoStringS = event.start.toISOString();
 	       		var isoStringE = event.end.toISOString();
-	   			$.post("/schedapp/CalendarRemoveServlet",
-	   					{
-	   						startTime: isoStringS,
-	   						endTime: isoStringE,
-	   						title: event.title,
-	   					}
-	   			);
-				return true;
+	       		if ((semTime == fallStart && event.start.isAfter(fallStart)) ||
+	       				(semTime == springStart && event.start.isBefore(fallStart))){
+		   			$.post("/schedapp/CalendarRemoveServlet",
+		   					{
+		   						startTime: isoStringS,
+		   						endTime: isoStringE,
+		   						title: event.title,
+		   					}
+		   			);
+		   			return true;
+	       		}
+	       		return false;
 			}
 		);
    	}
