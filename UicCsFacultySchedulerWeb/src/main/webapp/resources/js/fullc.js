@@ -4,6 +4,7 @@ var contextMenuEvent = null;
 var changingEvent = null;
 
 var springStart = "2015-02-09";
+var betweenTime = "2015-02-20";
 var fallStart = "2015-02-23";
 
 function filterCourse(){
@@ -66,8 +67,8 @@ function removeAll(){
 			function (event){
 	       		var isoStringS = event.start.toISOString();
 	       		var isoStringE = event.end.toISOString();
-	       		if ((semTime == fallStart && event.start.isAfter(fallStart)) ||
-	       				(semTime == springStart && event.start.isBefore(fallStart))){
+	       		if ((semTime == fallStart && event.start.isAfter(betweenTime)) ||
+	       				(semTime == springStart && event.start.isBefore(betweenTime))){
 		   			$.post("/schedapp/CalendarRemoveServlet",
 		   					{
 		   						startTime: isoStringS,
@@ -76,8 +77,7 @@ function removeAll(){
 		   					}
 		   			);
 		   			return true;
-	       		}
-	       		return false;
+	       		} else return false;
 			}
 		);
    	}
