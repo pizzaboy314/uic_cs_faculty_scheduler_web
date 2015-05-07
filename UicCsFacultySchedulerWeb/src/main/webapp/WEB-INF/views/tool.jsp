@@ -48,6 +48,14 @@
 	type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/js/fullc.js"
 	type="text/javascript"></script>
+<script type="text/javascript">
+   function stopEnterKey(evt) {
+       var evt = (evt) ? evt : ((event) ? event : null);
+       var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+       if ((evt.keyCode == 13) && (node.type == "text")) { return false; }
+   }
+   document.onkeypress = stopEnterKey;
+</script>
 	
 	
 <style type="text/css">
@@ -104,7 +112,7 @@
 				<td>
 					<form role="form">
 						<div class="form-group has-feedback" style="width: 200px;">
-							<input type="text" class="form-control" oninput="filterCourse()" placeholder="Search..." />
+							<input id="filterSearch" type="text" class="form-control" oninput="filterCourse()" placeholder="Search..." />
 							<i class="form-control-feedback glyphicon glyphicon-search"></i>
 						</div>
 					</form>

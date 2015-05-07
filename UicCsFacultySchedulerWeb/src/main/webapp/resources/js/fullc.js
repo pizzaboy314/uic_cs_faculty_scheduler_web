@@ -7,7 +7,15 @@ var springStart = "2015-02-09";
 var fallStart = "2015-02-23";
 
 function filterCourse(){
-	
+	var inputVal = $("#filterSearch").val().toUpperCase().trim();
+	var childDivs = document.getElementById('external-events').getElementsByTagName('div');
+	for (i = 0; i < childDivs.length; i++) {
+		var childDiv = childDivs[i];
+		if ((inputVal === "") || childDiv.innerHTML.indexOf(inputVal) > -1)
+			childDiv.style.display = 'block';
+		else
+			childDiv.style.display = 'none';
+	}
 }
 
 function swtichSemester(){
